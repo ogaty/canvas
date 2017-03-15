@@ -13,8 +13,8 @@ return [
     |
     */
     'defaults' => [
-        'guard' => 'web',
-        'passwords' => 'users',
+        'guard' => 'canvas',
+        'passwords' => 'canvas_users',
     ],
 
     /*

@@ -1,5 +1,7 @@
 <?php
 
+use Canvas\Helpers\CanvasHelper;
+
 class TagEditPageTest extends TestCase
 {
     use InteractsWithDatabase, CreatesUser, TestHelper;
@@ -7,13 +9,13 @@ class TagEditPageTest extends TestCase
     /** @test */
     public function it_can_edit_tags()
     {
-//        $this->actingAs($this->user)
-//            ->visit(route('admin.tag.edit', 1))
-//            ->type('Foo', 'title')
-//            ->press('Save')
-//            ->see('Success! Tag has been updated.')
-//            ->see('Foo')
-//            ->seeInDatabase('tags', ['title' => 'Foo']);
+        Auth::guard('canvas')->login($this->user);
+        $this->callRouteAsUser('canvas.admin.tag.edit', 1)
+            ->type('Foo', 'title')
+            ->press('Save')
+            ->see('Foo')
+            ->seeInDatabase(CanvasHelper::TABLES['tags'], ['title' => 'Foo'])
+            ->assertSessionMissing('errors');
     }
 
     /** @test */
@@ -23,7 +25,7 @@ class TagEditPageTest extends TestCase
         $this->callRouteAsUser('canvas.admin.tag.edit', 1)
             ->press('Delete Tag')
             ->see('Success! Tag has been deleted.')
-            ->dontSeeTagInDatabase('tags', ['id' => 1])
+            ->dontSeeTagInDatabase(CanvasHelper::TABLES['tags'], ['id' => 1])
             ->assertSessionMissing('errors');
     }
 }

@@ -40,13 +40,13 @@ class ParsedownerTest extends TestCase
             ['---', '<hr />'],
             ['***', '<hr />'],
             ['>note', "<blockquote>\n<p>note</p>\n</blockquote>"],
-            ['[Canvas](http://austintoddj.github.io/Canvas "Canvas")', '<p><a href="http://austintoddj.github.io/Canvas" title="Canvas">Canvas</a></p>'],
+            ['[Canvas](https://cnvs.io "Canvas")', '<p><a href="https://cnvs.io" title="Canvas">Canvas</a></p>'],
             ['Intra-word *emp*hasis', '<p>Intra-word <em>emp</em>hasis</p>'],
             ['~~Strikethrough~~', '<p><del>Strikethrough</del></p>'],
-            ['![Canvas Logo](http://canvas.toddaustin.io/img/canvas-logo.gif)', '<p><img src="http://canvas.toddaustin.io/img/canvas-logo.gif" alt="Canvas Logo" /></p>'],
+            ['![Canvas Logo](https://cnvs.io/img/canvas-logo.gif)', '<p><img src="https://cnvs.io/img/canvas-logo.gif" alt="Canvas Logo" /></p>'],
             ['- List Item', "<ul>\n<li>List Item</li>\n</ul>"],
             ['1. List Item', "<ol>\n<li>List Item</li>\n</ol>"],
-            ['[Canvas](http://canvas.toddaustin.io)', '<p><a href="http://canvas.toddaustin.io">Canvas</a></p>'],
+            ['[Canvas](https://cnvs.io)', '<p><a href="https://cnvs.io">Canvas</a></p>'],
         ];
     }
 }

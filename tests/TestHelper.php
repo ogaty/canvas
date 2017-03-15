@@ -10,7 +10,6 @@ trait TestHelper
      * @param  string           $route       The route's name.
      * @param  array|int|null   $routeData   The route's parameters.
      * @param  array|null       $requestData The data that should be posted to the server.
-     * @return void
      */
     protected function callRouteAsUser($route, $routeData = null, $requestData = null)
     {
