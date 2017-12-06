@@ -1,0 +1,42 @@
+@extends('backend.layout')
+
+@section('title')
+    <title>{{ \Easel\Models\Settings::blogTitle() }} | Home</title>
+@stop
+
+@section('content')
+    <section id="main">
+        @include('backend.shared.partials.sidebar-navigation')
+        <section id="content">
+            <div class="container">
+                @if(\Easel\Models\User::isAdmin(Auth::guard('canvas')->user()->role))
+                    @include('backend.home.sections.welcome')
+                @endif
+                <div class="row">
+                    @if(\Easel\Models\User::isAdmin(Auth::guard('canvas')->user()->role))
+                        <div class="col-sm-6 col-md-6">
+                            @include('backend.home.sections.at-a-glance')
+                        </div>
+                    @endif
+                    <div class="col-sm-6 col-md-6">
+                        @include('backend.home.sections.quick-draft')
+                    </div>
+                    <div class="col-sm-6 col-md-6">
+                        @include('backend.home.sections.recent-posts')
+                    </div>
+                    <div class="col-sm-6 col-md-6">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+    @include('backend.home.partials.modals.update')
+@stop
+
+@section('unique-js')
+    @if(Session::get('_login'))
+        @include('backend.shared.notifications.notify', ['section' => '_login'])
+        {{ \Session::forget('_login') }}
+    @endif
+    @include('backend.shared.components.slugify')
+@stop

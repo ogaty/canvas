@@ -13,6 +13,6 @@ class HelpController extends Controller
      */
     public function index()
     {
-        return view('canvas::backend.help.index');
+        return view('backend.help.index');
     }
 }

@@ -19,6 +19,8 @@ trait CreatesUser
      */
     public function createUser()
     {
-        $this->user = factory(User::class)->create();
+        //$this->user = factory(Easel\Models\User::class)->create();
+        //$this->user = factory(Easel\Models\User::class)->make();
+        $this->user = new User();
     }
 }

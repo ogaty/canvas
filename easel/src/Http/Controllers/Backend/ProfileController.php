@@ -20,7 +20,7 @@ class ProfileController extends Controller
         $blogData = config('blog');
         $data = array_merge($userData, $blogData);
 
-        return view('canvas::backend.profile.index', compact('data'));
+        return view('backend.profile.index', compact('data'));
     }
 
     /**
@@ -30,7 +30,7 @@ class ProfileController extends Controller
      */
     public function editPrivacy()
     {
-        return view('canvas::backend.profile.privacy', [
+        return view('backend.profile.privacy', [
             'data' => array_merge($this->guard()->user()->toArray(), config('blog')),
         ]);
     }
@@ -49,7 +49,7 @@ class ProfileController extends Controller
         $user->fill($request->toArray())->save();
         $user->save();
 
-        Session::set('_profile', trans('canvas::messages.update_success', ['entity' => 'Profile']));
+        $request->session()->put('_profile', trans('canvas::messages.update_success', ['entity' => 'Profile']));
 
         return redirect()->route('canvas.admin.profile.index');
     }

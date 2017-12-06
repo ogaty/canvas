@@ -70,13 +70,13 @@ class BlogController extends Controller
         $tag = $request->get('tag');
         $data = $this->dispatch(new BlogFeedData($tag));
 
-        return response()->view('canvas::frontend.blog.feed', compact('data'))->header('Content-Type', 'application/rss+xml');
+        return response()->view('frontend.blog.feed', compact('data'))->header('Content-Type', 'application/rss+xml');
     }
 
     public function sitemap(Request $request)
     {
         $tag = null;
         $data = $this->dispatch(new BlogXmlData($tag));
-        return response()->view('canvas::frontend.blog.sitemap', compact('data'))->header('Content-Type', 'application/xml');
+        return response()->view('frontend.blog.sitemap', compact('data'))->header('Content-Type', 'application/xml');
     }
 }

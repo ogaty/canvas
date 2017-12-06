@@ -13,6 +13,6 @@ class UploadController extends Controller
      */
     public function index()
     {
-        return view('canvas::backend.upload.index');
+        return view('backend.upload.index');
     }
 }

@@ -36,7 +36,7 @@ class ToolsController extends Controller
             'status' => App::isDownForMaintenance() ? CanvasHelper::MAINTENANCE_MODE_ENABLED : CanvasHelper::MAINTENANCE_MODE_DISABLED,
         ];
 
-        return view('canvas::backend.tools.index', compact('data'));
+        return view('backend.tools.index', compact('data'));
     }
 
     /**

@@ -22,7 +22,7 @@ class UserController extends Controller
     {
         $data = User::all();
 
-        return view('canvas::backend.user.index', compact('data'));
+        return view('backend.user.index', compact('data'));
     }
 
     /**
@@ -32,7 +32,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('canvas::backend.user.create');
+        return view('backend.user.create');
     }
 
     /**
@@ -65,7 +65,7 @@ class UserController extends Controller
     {
         $data = User::findOrFail($id);
 
-        return view('canvas::backend.user.edit', compact('data'));
+        return view('backend.user.edit', compact('data'));
     }
 
     /**
@@ -98,7 +98,7 @@ class UserController extends Controller
     {
         $data = User::findOrFail($id);
 
-        return view('canvas::backend.user.privacy', compact('data'));
+        return view('backend.user.privacy', compact('data'));
     }
 
     /**

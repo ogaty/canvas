@@ -31,6 +31,6 @@ class HomeController extends Controller
             'latestRelease' => Settings::latestRelease(),
         ];
 
-        return view('canvas::backend.home.index', compact('data'));
+        return view('backend.home.index', compact('data'));
     }
 }

@@ -37,7 +37,7 @@ return [
     | The default layout for creating new posts.
     |
     */
-    'post_layout' => 'canvas::frontend.blog.post',
+    'post_layout' => 'frontend.blog.post',
 
     /*
     |--------------------------------------------------------------------------
@@ -51,7 +51,7 @@ return [
     | src/Models/Tag.php
     |
     */
-    'tag_layout' => 'canvas::frontend.blog.index',
+    'tag_layout' => 'frontend.blog.index',
 
     /*
     |--------------------------------------------------------------------------

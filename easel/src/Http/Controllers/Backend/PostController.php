@@ -20,7 +20,7 @@ class PostController extends Controller
     {
         $data = Post::all();
 
-        return view('canvas::backend.post.index', compact('data'));
+        return view('backend.post.index', compact('data'));
     }
 
     /**
@@ -32,7 +32,7 @@ class PostController extends Controller
     {
         $data = $this->dispatch(new PostFormFields());
 
-        return view('canvas::backend.post.create', $data);
+        return view('backend.post.create', $data);
     }
 
     /**
@@ -63,7 +63,7 @@ class PostController extends Controller
     {
         $data = $this->dispatch(new PostFormFields($id));
 
-        return view('canvas::backend.post.edit', $data);
+        return view('backend.post.edit', $data);
     }
 
     /**

@@ -73,7 +73,7 @@ class SettingsController extends Controller
             'socialHeaderIconsUserId' => Settings::socialHeaderIconsUserId(),
         ];
 
-        return view('canvas::backend.settings.index', compact('data'));
+        return view('backend.settings.index', compact('data'));
     }
 
     /**

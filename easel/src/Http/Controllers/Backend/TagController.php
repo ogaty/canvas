@@ -30,7 +30,7 @@ class TagController extends Controller
     {
         $data = Tag::all();
 
-        return view('canvas::backend.tag.index', compact('data'));
+        return view('backend.tag.index', compact('data'));
     }
 
     /**
@@ -46,7 +46,7 @@ class TagController extends Controller
             $data[$field] = old($field, $default);
         }
 
-        return view('canvas::backend.tag.create', compact('data'));
+        return view('backend.tag.create', compact('data'));
     }
 
     /**
@@ -62,7 +62,7 @@ class TagController extends Controller
         $tag->fill($request->toArray())->save();
         $tag->save();
 
-        Session::set('_new-tag', trans('canvas::messages.create_success', ['entity' => 'tag']));
+        Session::set('_new-tag', trans('messages.create_success', ['entity' => 'tag']));
 
         return redirect()->route('canvas.admin.tag.index');
     }
@@ -82,7 +82,7 @@ class TagController extends Controller
             $data[$field] = old($field, $tag->$field);
         }
 
-        return view('canvas::backend.tag.edit', compact('data'));
+        return view('backend.tag.edit', compact('data'));
     }
 
     /**
