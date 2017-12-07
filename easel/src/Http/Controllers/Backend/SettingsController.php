@@ -6,6 +6,7 @@ use Session;
 use App\Models\Settings;
 use App\Helpers\CanvasHelper;
 use Easel\Extensions\ThemeManager;
+use App\Extensions\NewThemeManager;
 use Easel\Http\Controllers\Controller;
 use Easel\Http\Requests\SettingsUpdateRequest;
 
@@ -24,6 +25,7 @@ class SettingsController extends Controller
     public function __construct()
     {
         $this->themeManager = new ThemeManager(resolve('app'), resolve('files'));
+        $this->themeManager2 = new NewThemeManager(resolve('app'), resolve('files'));
     }
 
     /**

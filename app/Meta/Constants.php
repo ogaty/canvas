@@ -35,12 +35,7 @@ class Constants
     /**
      * @constant(DEFAULT_THEME_NAME)
      */
-    const DEFAULT_THEME_NAME = 'Paper';
-
-    /**
-     * @constant(DEFAULT_THEME_VERSION)
-     */
-    const DEFAULT_THEME_VERSION = 'v1.0.5';
+    const DEFAULT_THEME_NAME = 'easel';
 
     /**
      * @constant(REQUIRED_TABLES)
