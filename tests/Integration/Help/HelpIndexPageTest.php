@@ -7,6 +7,8 @@ class HelpIndexPageTest extends TestCase
     /** @test */
     public function it_can_refresh_the_user_page()
     {
+        $this->user = factory(\App\Models\User::class)->make();
+
         $this->be($this->user);
         $response = $this->get(route('canvas.admin.help'));
         $response->assertStatus(200);

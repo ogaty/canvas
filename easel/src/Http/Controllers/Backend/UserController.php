@@ -2,7 +2,7 @@
 
 namespace Easel\Http\Controllers\Backend;
 
-use Easel\Models\User;
+use App\Models\User;
 use App\Helpers\CanvasHelper;
 use Illuminate\Support\Facades\DB;
 use Easel\Http\Controllers\Controller;

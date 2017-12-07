@@ -1,6 +1,6 @@
 <?php
 
-use Easel\Models\User;
+use App\Models\User;
 
 trait CreatesUser
 {
@@ -14,13 +14,12 @@ trait CreatesUser
     /**
      * Create the user model test subject.
      *
-     * @before
      * @return void
      */
     public function createUser()
     {
-        //$this->user = factory(Easel\Models\User::class)->create();
-        //$this->user = factory(Easel\Models\User::class)->make();
-        $this->user = new User();
+        $this->user = factory(User::class)->create();
+        //$this->user = factory(User::class)->make();
+        //$this->user = new User();
     }
 }

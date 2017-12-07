@@ -31,11 +31,11 @@
             </ul>
         </li>
         <li @if (Request::is('admin/upload')) class="active" @endif><a href="{!! route('canvas.admin.upload') !!}"><i class="zmdi zmdi-collection-folder-image"></i> Media</a></li>
-        @if(\Easel\Models\User::isAdmin(Auth::guard('canvas')->user()->role))
+        @if(\App\Models\User::isAdmin(Auth::guard('canvas')->user()->role))
             <li class="sub-menu @if (Route::is('canvas.admin.user.index') || Route::is('canvas.admin.user.create') || Route::is('canvas.admin.user.edit'))active toggled @endif">
                 <a href="" data-ma-action="submenu-toggle"><i class="zmdi zmdi-accounts-alt"></i> Users</a>
                 <ul>
-                    <li><a href="{!! route('canvas.admin.user.index') !!}" @if (Route::is('canvas.admin.user.index') || Route::is('canvas.admin.user.edit')) class="active" @endif>All Users <span class="label label-default label-totals">{!! Easel\Models\User::count() !!}</span></a></li>
+                    <li><a href="{!! route('canvas.admin.user.index') !!}" @if (Route::is('canvas.admin.user.index') || Route::is('canvas.admin.user.edit')) class="active" @endif>All Users <span class="label label-default label-totals">{!! App\Models\User::count() !!}</span></a></li>
                     <li><a href="{!! route('canvas.admin.user.create') !!}" @if (Route::is('canvas.admin.user.create')) class="active" @endif>Add New</a></li>
                 </ul>
             </li>

@@ -3,7 +3,7 @@
 namespace Easel\Http\Controllers\Backend;
 
 use Session;
-use Easel\Models\User;
+use App\Models\User;
 use Easel\Http\Controllers\Controller;
 use Easel\Http\Requests\ProfileUpdateRequest;
 

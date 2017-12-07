@@ -7,6 +7,8 @@ class HomeIndexPageTest extends TestCase
     /** @test */
     public function it_can_preview_the_blog_from_the_home_page()
     {
+        $this->user = factory(\App\Models\User::class)->make();
+
         $this->be($this->user);
         $response = $this->get(route('canvas.admin'));
         $response->assertStatus(200);

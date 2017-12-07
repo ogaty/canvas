@@ -2,7 +2,7 @@
 
 use Easel\Models\Tag;
 use Easel\Models\Post;
-use Easel\Models\User;
+use App\Models\User;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 trait InteractsWithDatabase

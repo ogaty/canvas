@@ -2,7 +2,7 @@
 
 namespace Easel\Http\Requests;
 
-use Easel\Models\User;
+use App\Models\User;
 use Illuminate\Validation\Rule;
 use App\Helpers\CanvasHelper;
 use Illuminate\Foundation\Http\FormRequest;

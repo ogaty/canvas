@@ -6,7 +6,7 @@ use Excel;
 use Session;
 use Easel\Models\Tag;
 use Easel\Models\Post;
-use Easel\Models\User;
+use App\Models\User;
 use Easel\Models\PostTag;
 use Easel\Models\Settings;
 use Easel\Models\Migrations;

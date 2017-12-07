@@ -2,7 +2,7 @@
 
 namespace Easel\Http\Controllers\Auth;
 
-use Easel\Models\User;
+use App\Models\User;
 use App\Helpers\CanvasHelper;
 use Easel\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
