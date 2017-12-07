@@ -4,7 +4,7 @@
 @section('twitter-title', $post->title)
 @section('og-description', $post->meta_description)
 @section('twitter-description', $post->meta_description)
-@section('title', \Easel\Models\Settings::blogTitle().' | '.$post->title)
+@section('title', \App\Models\Settings::blogTitle().' | '.$post->title)
 @if ($post->page_image)
     @section('og-image', url( $post->page_image ))
     @section('twitter-image', url( $post->page_image ))

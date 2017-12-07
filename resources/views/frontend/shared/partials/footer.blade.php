@@ -1,5 +1,5 @@
 <div class="container">
-    @if(!empty(\Easel\Models\Settings::disqus()))
+    @if(!empty(\App\Models\Settings::disqus()))
         @include('frontend.blog.partials.disqus')
     @endif
     <div style="text-align: center">
@@ -18,6 +18,6 @@
     <a id="scroll-to-top" href="#top">SCROLL TO TOP</a>
 </span>
 
-@if (!empty(\Easel\Models\Settings::gaId()))
+@if (!empty(\App\Models\Settings::gaId()))
     @include('frontend.blog.partials.analytics')
 @endif

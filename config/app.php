@@ -223,7 +223,7 @@ return [
         'JsValidator'   => Proengsoft\JsValidation\Facades\JsValidatorFacade::class,
         'ConfigWriter'  => Larapack\ConfigWriter\Repository::class,
         'Excel'         => Maatwebsite\Excel\Facades\Excel::class,
-        'Settings'      => Easel\Models\Settings::class,
+        'Settings'      => App\Models\Settings::class,
 
     ],
 

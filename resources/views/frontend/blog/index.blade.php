@@ -1,14 +1,14 @@
 @extends('frontend.layout')
 
 @if (isset($tag->title))
-    @section('title', \Easel\Models\Settings::blogTitle().' | '.$tag->title)
+    @section('title', \App\Models\Settings::blogTitle().' | '.$tag->title)
 @else
-    @section('title', \Easel\Models\Settings::blogTitle().' | Blog')
+    @section('title', \App\Models\Settings::blogTitle().' | Blog')
 @endif
-@section('og-title', \Easel\Models\Settings::blogTitle())
-@section('twitter-title', \Easel\Models\Settings::blogTitle())
-@section('og-description', \Easel\Models\Settings::blogDescription())
-@section('twitter-description', \Easel\Models\Settings::blogDescription())
+@section('og-title', \App\Models\Settings::blogTitle())
+@section('twitter-title', \App\Models\Settings::blogTitle())
+@section('og-description', \App\Models\Settings::blogDescription())
+@section('twitter-description', \App\Models\Settings::blogDescription())
 
 @section('content')
     <div class="container">

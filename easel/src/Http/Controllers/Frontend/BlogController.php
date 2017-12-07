@@ -6,7 +6,7 @@ use Auth;
 use Easel\Models\Tag;
 use Easel\Models\Post;
 use App\Models\User;
-use Easel\Models\Settings;
+use App\Models\Settings;
 use Illuminate\Http\Request;
 use Easel\Jobs\BlogIndexData;
 use Easel\Jobs\BlogFeedData;

@@ -1,7 +1,7 @@
 @extends('backend.layout')
 
 @section('title')
-    <title>{{ \Easel\Models\Settings::blogTitle() }} | Forgot Password</title>
+    <title>{{ \App\Models\Settings::blogTitle() }} | Forgot Password</title>
 @stop
 
 @section('login')

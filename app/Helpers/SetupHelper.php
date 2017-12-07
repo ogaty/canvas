@@ -3,7 +3,7 @@
 namespace App\Helpers;
 
 use Schema;
-use Easel\Models\Settings;
+use App\Models\Settings;
 use Illuminate\Support\Facades\File;
 
 class SetupHelper extends CanvasHelper

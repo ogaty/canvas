@@ -3,9 +3,9 @@
 namespace App\Helpers;
 
 use ErrorException;
-use Easel\Models\User;
+use App\Models\User;
 use App\Meta\Constants;
-use Easel\Models\Settings;
+use App\Models\Settings;
 use Illuminate\Http\Request;
 use Easel\Extensions\ExtensionManager;
 use Illuminate\Support\Facades\Session;

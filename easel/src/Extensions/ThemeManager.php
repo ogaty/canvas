@@ -3,7 +3,7 @@
 namespace Easel\Extensions;
 
 use App\Meta\Constants;
-use Easel\Models\Settings;
+use App\Models\Settings;
 use Illuminate\Support\Collection;
 
 class ThemeManager extends ExtensionManager

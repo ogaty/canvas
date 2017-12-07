@@ -56,7 +56,7 @@
         <div class="fg-line">
             <label class="fg-label">Social Header Icons</label>
             <select name="social_header_icons_user_id" id="social_header_icons_user_id" class="selectpicker">
-                @foreach (\Easel\Models\User::all() as $user)
+                @foreach (\App\Models\User::all() as $user)
                     <option @if ($user->id == $data['socialHeaderIconsUserId']) selected @endif value="{!! $user->id !!}">{!! $user->display_name !!}</option>
                 @endforeach
             </select>

@@ -2,7 +2,7 @@
 
 namespace Easel;
 
-use Easel\Models\Settings;
+use App\Models\Settings;
 use App\Helpers\RouteHelper;
 use App\Helpers\SetupHelper;
 use App\Helpers\CanvasHelper;

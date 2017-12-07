@@ -5,8 +5,8 @@ namespace Easel\Console\Commands;
 use File;
 use Artisan;
 use Exception;
-use Easel\Models\User;
-use Easel\Models\Settings;
+use App\Models\User;
+use App\Models\Settings;
 use Illuminate\Console\Command;
 use App\Helpers\CanvasHelper;
 

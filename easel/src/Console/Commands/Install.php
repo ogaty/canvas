@@ -3,7 +3,7 @@
 namespace Easel\Console\Commands;
 
 use Exception;
-use Easel\Models\User;
+use App\Models\User;
 use App\Meta\Constants;
 use App\Helpers\SetupHelper;
 use App\Helpers\ConfigHelper;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Easel\Services;
+namespace App\Services;
 
 use Parsedown as Parsedown;
 

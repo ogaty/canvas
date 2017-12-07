@@ -1,7 +1,7 @@
 @extends('backend.layout')
 
 @section('title')
-    <title>{{ \Canvas\Models\Settings::blogTitle() }} | Help</title>
+    <title>{{ \App\Models\Settings::blogTitle() }} | Help</title>
 @stop
 
 @section('content')

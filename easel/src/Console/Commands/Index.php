@@ -62,6 +62,6 @@ class Index extends CanvasCommand
     public function createUsersIndex()
     {
         $this->comment('Indexing the users table, saving to '.storage_path(CanvasHelper::INDEXES['users']).'...');
-        Artisan::call('scout:import', ['model' => 'Easel\\Models\\User']);
+        Artisan::call('scout:import', ['model' => 'App\\Models\\User']);
     }
 }

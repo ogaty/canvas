@@ -1,6 +1,6 @@
 <?php
 
-use Easel\Models\Settings;
+use App\Models\Settings;
 use Illuminate\Database\Seeder;
 
 class SettingsTableSeeder extends Seeder

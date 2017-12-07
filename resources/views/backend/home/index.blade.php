@@ -1,7 +1,7 @@
 @extends('backend.layout')
 
 @section('title')
-    <title>{{ \Easel\Models\Settings::blogTitle() }} | Home</title>
+    <title>{{ \App\Models\Settings::blogTitle() }} | Home</title>
 @stop
 
 @section('content')

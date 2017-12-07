@@ -18,7 +18,7 @@
 		"laravel/scout": "2.*",
 		"teamtnt/laravel-scout-tntsearch-driver": "2.*",
 		"erusev/parsedown": "^1.6",
-		"proengsoft/laravel-jsvalidation": "1.5.*",
+		"proengsoft/laravel-jsvalidation": "2.1.*",
 		"maatwebsite/excel": "^2.1",
 		"larapack/config-writer": "^1.0"
 	},

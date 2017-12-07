@@ -8,13 +8,14 @@ use Easel\Models\Tag;
 use Easel\Models\Post;
 use App\Models\User;
 use Easel\Models\PostTag;
-use Easel\Models\Settings;
+use App\Models\Settings;
 use Easel\Models\Migrations;
 use App\Helpers\CanvasHelper;
 use Easel\Models\PasswordResets;
 use Illuminate\Support\Facades\App;
 use Easel\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Http\Request;
 
 class ToolsController extends Controller
 {
@@ -44,15 +45,15 @@ class ToolsController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function clearCache()
+    public function clearCache(Request $request)
     {
         $exitCode = Artisan::call('cache:clear');
         $exitCode = Artisan::call('route:clear');
         $exitCode = Artisan::call('optimize');
         if ($exitCode === 0) {
-            Session::set('_cache-clear', trans('canvas::messages.cache_clear_success'));
+            $request->session()->put('_cache-clear', trans('canvas::messages.cache_clear_success'));
         } else {
-            Session::set('_cache-clear', trans('canvas::messages.cache_clear_error'));
+            $request->session()->put('_cache-clear', trans('canvas::messages.cache_clear_error'));
         }
 
         return redirect()->route('canvas.admin.tools');
@@ -210,14 +211,14 @@ class ToolsController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function enableMaintenanceMode()
+    public function enableMaintenanceMode(Request $request)
     {
         $exitCode = Artisan::call('down');
         if ($exitCode === 0) {
-            Session::set('admin_ip', request()->ip());
-            Session::set('_enable-maintenance-mode', trans('canvas::messages.enable_maintenance_mode_success'));
+            $request->session()->put('admin_ip', request()->ip());
+            $request->session()->put('_enable-maintenance-mode', trans('canvas::messages.enable_maintenance_mode_success'));
         } else {
-            Session::set('_enable-maintenance-mode', trans('canvas::messages.enable_maintenance_mode_error'));
+            $request->session()->put('_enable-maintenance-mode', trans('canvas::messages.enable_maintenance_mode_error'));
         }
 
         return redirect()->route('canvas.admin.tools');
@@ -228,13 +229,13 @@ class ToolsController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function disableMaintenanceMode()
+    public function disableMaintenanceMode(Request $request)
     {
         $exitCode = Artisan::call('up');
         if ($exitCode === 0) {
-            Session::set('_disable-maintenance-mode', trans('canvas::messages.disable_maintenance_mode_success'));
+            $request->session()->put('_disable-maintenance-mode', trans('canvas::messages.disable_maintenance_mode_success'));
         } else {
-            Session::set('_disable-maintenance-mode', trans('canvas::messages.disable_maintenance_mode_error'));
+            $request->session()->put('_disable-maintenance-mode', trans('canvas::messages.disable_maintenance_mode_error'));
         }
 
         return redirect()->route('canvas.admin.tools');

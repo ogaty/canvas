@@ -3,7 +3,7 @@
 namespace Easel\Http\Controllers\Backend;
 
 use Session;
-use Easel\Models\Settings;
+use App\Models\Settings;
 use App\Helpers\CanvasHelper;
 use Easel\Extensions\ThemeManager;
 use Easel\Http\Controllers\Controller;

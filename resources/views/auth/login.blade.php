@@ -1,7 +1,7 @@
 @extends('backend.layout')
 
 @section('title')
-    <title>{{ \Easel\Models\Settings::blogTitle() }} | Sign In</title>
+    <title>{{ \App\Models\Settings::blogTitle() }} | Sign In</title>
 @stop
 
 @section('login')

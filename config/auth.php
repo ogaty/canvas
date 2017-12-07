@@ -71,7 +71,7 @@ return [
         ],
         'canvas_users' => [
             'driver' => 'eloquent',
-            'model' => Easel\Models\User::class,
+            'model' => App\Models\User::class,
         ],
     ],
 

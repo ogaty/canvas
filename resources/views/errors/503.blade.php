@@ -1,7 +1,7 @@
 @extends('errors.layout')
 
 @section('title')
-    <title>{{ \Canvas\Models\Settings::blogTitle() }} | Be right back</title>
+    <title>{{ \App\Models\Settings::blogTitle() }} | Be right back</title>
 @stop
 
 @section('content')

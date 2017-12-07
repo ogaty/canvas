@@ -5,7 +5,7 @@ namespace Easel\Http\Controllers\Backend;
 use Easel\Models\Tag;
 use Easel\Models\Post;
 use App\Models\User;
-use Easel\Models\Settings;
+use App\Models\Settings;
 use App\Helpers\CanvasHelper;
 use Illuminate\Support\Facades\App;
 use Easel\Http\Controllers\Controller;
