@@ -1,6 +1,6 @@
 <?php
 
-namespace Easel\Http\Controllers\Backend;
+namespace App\Http\Controllers\Backend;
 
 use Session;
 use App\Models\Settings;
@@ -9,6 +9,7 @@ use Easel\Extensions\ThemeManager;
 use App\Extensions\NewThemeManager;
 use Easel\Http\Controllers\Controller;
 use Easel\Http\Requests\SettingsUpdateRequest;
+use Illuminate\Filesystem\Filesystem;
 
 class SettingsController extends Controller
 {
@@ -35,6 +36,7 @@ class SettingsController extends Controller
      */
     public function index()
     {
+        $themes = $this->themeManager2->getThemes();
         $data = [
             'blogTitle' => Settings::blogTitle(),
             'blogSubtitle' => Settings::blogSubTitle(),

@@ -122,7 +122,7 @@ Route::group([
         Route::post(RouteHelper::getAdminPrefix().'/tools/disable_maintenance_mode', 'ToolsController@disableMaintenanceMode')->name('canvas.admin.tools.disable_maintenance_mode');
 
         /* Settings page routes. */
-        Route::get(RouteHelper::getAdminPrefix().'/settings', 'SettingsController@index')->name('canvas.admin.settings');
-        Route::post(RouteHelper::getAdminPrefix().'/settings', 'SettingsController@store')->name('canvas.admin.settings');
+        Route::get(RouteHelper::getAdminPrefix().'/settings', '\App\Http\Controllers\Backend\SettingsController@index')->name('canvas.admin.settings');
+        Route::post(RouteHelper::getAdminPrefix().'/settings', '\App\Http\Controllers\Backend\SettingsController@store')->name('canvas.admin.settings');
     });
 });

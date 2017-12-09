@@ -120,7 +120,7 @@ class ThemeManager extends ExtensionManager
                 ],
             ],
         ]);
-        $theme->setVersion(Constants::DEFAULT_THEME_VERSION);
+        $theme->setVersion("1.0");
 
         return $theme;
     }

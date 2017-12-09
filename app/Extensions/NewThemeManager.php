@@ -44,6 +44,26 @@ class NewThemeManager
     }
 
     /**
+     * @return Collection
+     */
+    public function getThemes()
+    {
+        $themes = new Collection;
+
+        $files = new Filesystem;
+        $path = resource_path('views/themes');
+        $dirs = $files->directories($path);
+          
+        $count = 0;
+        foreach ($dirs as $dir) {
+            $themes->put($count, $files->basename($dir));
+            $count++;
+        }
+
+        return $themes;
+    }
+
+    /**
      * Get default Theme name.
      * @return string
      */

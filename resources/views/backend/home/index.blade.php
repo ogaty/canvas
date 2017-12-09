@@ -34,9 +34,9 @@
 @stop
 
 @section('unique-js')
-    @if(Session::get('_login'))
+    @if(session()->get('_login'))
         @include('backend.shared.notifications.notify', ['section' => '_login'])
-        {{ \Session::forget('_login') }}
+        {{ session()->forget('_login') }}
     @endif
     @include('backend.shared.components.slugify')
 @stop
