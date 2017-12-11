@@ -64,7 +64,7 @@ $factory->define(App\Models\Post::class, function () {
 | Create the initial Tag.
 |
 */
-$factory->define(Easel\Models\Tag::class, function () {
+$factory->define(App\Models\Tag::class, function () {
     return [
         'tag' => 'Getting Started',
         'title' => 'Getting Started',

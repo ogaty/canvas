@@ -72,7 +72,7 @@
                     <div class="form-group" style="padding-top: 10px">
                         <div class="toggle-switch toggle-switch-demo" data-ts-color="blue">
                             <label for="is_published" class="ts-label"><span class="label label-default">Draft</span></label>
-                            <input {{ \Canvas\Helpers\CanvasHelper::checked($is_published) }} type="checkbox" name="is_published">
+                            <input {{ \App\Helpers\CanvasHelper::checked($is_published) }} type="checkbox" name="is_published">
                             <label for="is_published" class="ts-helper"></label>
                             <label for="is_published" class="ts-label" style="margin-left: 20px; margin-right: 0"><span class="label label-primary">Published</span></label>
                         </div>

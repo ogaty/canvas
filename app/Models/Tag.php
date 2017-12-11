@@ -1,6 +1,6 @@
 <?php
 
-namespace Easel\Models;
+namespace App\Models;
 
 use Laravel\Scout\Searchable;
 use App\Helpers\CanvasHelper;

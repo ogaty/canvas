@@ -26,7 +26,7 @@
         <li class="sub-menu @if (Route::is('canvas.admin.tag.index') || Route::is('canvas.admin.tag.create') || Route::is('canvas.admin.tag.edit'))active toggled @endif">
             <a href="" data-ma-action="submenu-toggle"><i class="zmdi zmdi-labels"></i> Tags</a>
             <ul>
-                <li><a href="{!! route('canvas.admin.tag.index') !!}" @if (Route::is('canvas.admin.tag.index') || Route::is('canvas.admin.tag.edit')) class="active" @endif>All Tags <span class="label label-default label-totals">{!! Easel\Models\Tag::count() !!}</span></a></li>
+                <li><a href="{!! route('canvas.admin.tag.index') !!}" @if (Route::is('canvas.admin.tag.index') || Route::is('canvas.admin.tag.edit')) class="active" @endif>All Tags <span class="label label-default label-totals">{!! App\Models\Tag::count() !!}</span></a></li>
                 <li><a href="{!! route('canvas.admin.tag.create') !!}" @if (Route::is('canvas.admin.tag.create')) class="active" @endif>Add New</a></li>
             </ul>
         </li>

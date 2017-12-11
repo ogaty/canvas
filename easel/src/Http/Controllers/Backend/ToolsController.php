@@ -4,10 +4,10 @@ namespace Easel\Http\Controllers\Backend;
 
 use Excel;
 use Session;
-use Easel\Models\Tag;
+use App\Models\Tag;
 use App\Models\Post;
 use App\Models\User;
-use Easel\Models\PostTag;
+use App\Models\PostTag;
 use App\Models\Settings;
 use Easel\Models\Migrations;
 use App\Helpers\CanvasHelper;

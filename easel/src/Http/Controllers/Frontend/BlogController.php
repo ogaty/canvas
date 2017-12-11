@@ -3,7 +3,7 @@
 namespace Easel\Http\Controllers\Frontend;
 
 use Auth;
-use Easel\Models\Tag;
+use App\Models\Tag;
 use App\Models\Post;
 use App\Models\User;
 use App\Models\Settings;

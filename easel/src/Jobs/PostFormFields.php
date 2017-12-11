@@ -3,7 +3,7 @@
 namespace Easel\Jobs;
 
 use Carbon\Carbon;
-use Easel\Models\Tag;
+use App\Models\Tag;
 use App\Models\Post;
 use Illuminate\Queue\SerializesModels;
 

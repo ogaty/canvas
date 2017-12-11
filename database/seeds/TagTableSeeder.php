@@ -1,6 +1,6 @@
 <?php
 
-use Easel\Models\Tag;
+use App\Models\Tag;
 use Illuminate\Database\Seeder;
 
 class TagTableSeeder extends Seeder

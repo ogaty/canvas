@@ -1,6 +1,6 @@
 <?php
 
-use Easel\Models\Tag;
+use App\Models\Tag;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Foundation\Testing\DatabaseTransactions;

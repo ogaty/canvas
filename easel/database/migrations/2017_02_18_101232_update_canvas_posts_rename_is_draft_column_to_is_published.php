@@ -1,6 +1,6 @@
 <?php
 
-use Canvas\Models\Post;
+use App\Models\Post;
 use Illuminate\Database\Migrations\Migration;
 
 class UpdateCanvasPostsRenameIsDraftColumnToIsPublished extends Migration

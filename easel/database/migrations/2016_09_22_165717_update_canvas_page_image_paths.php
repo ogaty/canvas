@@ -11,8 +11,8 @@ class UpdateCanvasPageImagePaths extends Migration
      */
     public function up()
     {
-        \Canvas\Models\Post::chunk(20, function (\Illuminate\Support\Collection $posts) {
-            $posts->each(function (\Canvas\Models\Post $post) {
+        \App\Models\Post::chunk(20, function (\Illuminate\Support\Collection $posts) {
+            $posts->each(function (\App\Models\Post $post) {
                 if (! starts_with($post->page_image, '/storage/')) {
                     $post->page_image = '/storage/'.$post->page_image;
                     $post->save();
@@ -28,8 +28,8 @@ class UpdateCanvasPageImagePaths extends Migration
      */
     public function down()
     {
-        \Canvas\Models\Post::chunk(20, function (\Illuminate\Support\Collection $posts) {
-            $posts->each(function (\Canvas\Models\Post $post) {
+        \App\Models\Post::chunk(20, function (\Illuminate\Support\Collection $posts) {
+            $posts->each(function (\App\Models\Post $post) {
                 if (starts_with($post->page_image, '/storage/')) {
                     $post->page_image = str_replace('/storage/', '', $post->page_image);
                     $post->save();

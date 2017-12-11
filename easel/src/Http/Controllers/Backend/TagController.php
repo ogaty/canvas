@@ -3,7 +3,7 @@
 namespace Easel\Http\Controllers\Backend;
 
 use Session;
-use Easel\Models\Tag;
+use App\Models\Tag;
 use Easel\Http\Controllers\Controller;
 use Easel\Http\Requests\TagCreateRequest;
 use Easel\Http\Requests\TagUpdateRequest;
