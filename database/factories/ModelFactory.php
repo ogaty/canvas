@@ -42,7 +42,7 @@ $factory->define(App\Models\User::class, function (Faker\Generator $faker) {
 | Create the initial Post.
 |
 */
-$factory->define(Easel\Models\Post::class, function () {
+$factory->define(App\Models\Post::class, function () {
     return [
         'title' => 'Hello World',
         'slug' => 'hello-world',

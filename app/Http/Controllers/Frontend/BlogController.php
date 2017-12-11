@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use Auth;
 use Easel\Models\Tag;
-use Easel\Models\Post;
+use App\Models\Post;
 use App\Models\User;
 use App\Models\Settings;
 use Illuminate\Http\Request;
@@ -12,6 +12,7 @@ use Easel\Jobs\BlogIndexData;
 use Easel\Jobs\BlogFeedData;
 use Easel\Jobs\BlogXmlData;
 use Easel\Http\Controllers\Controller;
+use App\Extensions\NewThemeManager;
 use Carbon\Carbon;
 
 class BlogController extends Controller
@@ -26,7 +27,8 @@ class BlogController extends Controller
     {
         $tag = $request->get('tag');
         $data = $this->dispatch(new BlogIndexData($tag));
-        $layout = $tag ? Tag::layout($tag)->first() : config('blog.tag_layout');
+        //$layout = $tag ? Tag::layout($tag)->first() : config('blog.tag_layout');
+        $layout = (new NewThemeManager(resolve('app'), resolve('files')))->getViewPath() . "frontend.blog.index";
         $socialHeaderIconsUser = User::where('id', Settings::socialHeaderIconsUserId())->first();
         $css = Settings::customCSS();
         $js = Settings::customJS();
@@ -62,7 +64,8 @@ class BlogController extends Controller
         $ad1 = $contents = Settings::ad1();
         $ad2 = $contents = Settings::ad2();
         $post->content_html = str_replace('<span id="ad1"></span>', $ad1, $post->content_html);
-        return view($post->layout, compact('post', 'tag', 'slug', 'title', 'user', 'css', 'js', 'socialHeaderIconsUser'));
+        $layout = (new NewThemeManager(resolve('app'), resolve('files')))->getViewPath() . "frontend.blog.post";
+        return view($layout, compact('post', 'tag', 'slug', 'title', 'user', 'css', 'js', 'socialHeaderIconsUser'));
     }
 
     public function feed(Request $request)

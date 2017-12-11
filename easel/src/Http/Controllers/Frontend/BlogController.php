@@ -4,7 +4,7 @@ namespace Easel\Http\Controllers\Frontend;
 
 use Auth;
 use Easel\Models\Tag;
-use Easel\Models\Post;
+use App\Models\Post;
 use App\Models\User;
 use App\Models\Settings;
 use Illuminate\Http\Request;

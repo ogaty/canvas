@@ -4,7 +4,7 @@ namespace Easel\Jobs;
 
 use Carbon\Carbon;
 use Easel\Models\Tag;
-use Easel\Models\Post;
+use App\Models\Post;
 use Illuminate\Queue\SerializesModels;
 
 /**

@@ -183,12 +183,17 @@ class Settings extends Model
 
     public static function ad1()
     {
-        return $customJS = self::where('setting_name', 'ad1')->pluck('setting_value')->first();
+        return self::where('setting_name', 'ad1')->pluck('setting_value')->first();
     }
 
     public static function ad2()
     {
-        return $customJS = self::where('setting_name', 'ad2')->pluck('setting_value')->first();
+        return self::where('setting_name', 'ad2')->pluck('setting_value')->first();
+    }
+
+    public static function themeName()
+    {
+        return self::where('setting_name', 'active_theme')->pluck('setting_value')->first();
     }
 
     /**

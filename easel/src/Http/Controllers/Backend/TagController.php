@@ -7,6 +7,7 @@ use Easel\Models\Tag;
 use Easel\Http\Controllers\Controller;
 use Easel\Http\Requests\TagCreateRequest;
 use Easel\Http\Requests\TagUpdateRequest;
+use Illuminate\Http\Request;
 
 class TagController extends Controller
 {
@@ -62,7 +63,7 @@ class TagController extends Controller
         $tag->fill($request->toArray())->save();
         $tag->save();
 
-        Session::set('_new-tag', trans('messages.create_success', ['entity' => 'tag']));
+        $request->session()->put('_new-tag', trans('messages.create_success', ['entity' => 'tag']));
 
         return redirect()->route('canvas.admin.tag.index');
     }
@@ -99,7 +100,7 @@ class TagController extends Controller
         $tag->fill($request->toArray())->save();
         $tag->save();
 
-        Session::set('_update-tag', trans('canvas::messages.update_success', ['entity' => 'Tag']));
+        $request->session()->put('_update-tag', trans('canvas::messages.update_success', ['entity' => 'Tag']));
 
         return redirect()->route('canvas.admin.tag.edit', $id);
     }
@@ -111,12 +112,12 @@ class TagController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
         $tag = Tag::findOrFail($id);
         $tag->delete();
 
-        Session::set('_delete-tag', trans('canvas::messages.delete_success', ['entity' => 'Tag']));
+        $request->session->put('_delete-tag', trans('canvas::messages.delete_success', ['entity' => 'Tag']));
 
         return redirect()->route('canvas.admin.tag.index');
     }

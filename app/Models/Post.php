@@ -1,6 +1,6 @@
 <?php
 
-namespace Easel\Models;
+namespace App\Models;
 
 use Carbon\Carbon;
 use Laravel\Scout\Searchable;
@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use App\Models\User;
+use Easel\Models\Tag;
 
 class Post extends Model
 {

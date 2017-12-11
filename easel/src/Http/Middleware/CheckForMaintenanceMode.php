@@ -7,6 +7,7 @@ use Session;
 use Illuminate\Routing\Route;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode as Original;
+use Illuminate\Http\Request;
 
 class CheckForMaintenanceMode extends Original
 {
@@ -69,8 +70,8 @@ class CheckForMaintenanceMode extends Original
         return $next($request);
     }
 
-    public function getExcludedIPs()
+    public function getExcludedIPs(Request $request)
     {
-        return (array) Session::get('admin_ip', []);
+        return (array) $request->session()->get('admin_ip', []);
     }
 }

@@ -10,7 +10,9 @@ use Illuminate\Filesystem\Filesystem;
 use Illuminate\Foundation\Application;
 
 class NewThemeManager
-{
+{  
+    const ACTIVE_KEY = 'active_theme';
+
     /**
      * @var Application
      */
@@ -71,4 +73,32 @@ class NewThemeManager
     {
         return Constants::DEFAULT_THEME_NAME;
     }
+
+    public function currentThemeName()
+    {
+        return Settings::themeName();
+    }
+
+    public function getViewPath() : string
+    {
+        $theme = $this->currentThemeName();
+        logger("theme: {$theme}");
+   
+        if ($theme == 'cnvs-paper-dark') {
+            return "";
+        }
+        $prefix = $theme == 'default' ? '' : $themeName . '/';
+        return $prefix;
+    }
+
+    public function activateTheme($themeId)
+    {
+        Settings::updateOrCreate(['setting_name' => self::ACTIVE_KEY], ['setting_value' => $themeId]);
+    }
+
+    public function setActiveTheme($id)
+    {
+        return $this->activateTheme($id);
+    }
+
 }

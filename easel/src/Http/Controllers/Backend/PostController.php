@@ -3,7 +3,7 @@
 namespace Easel\Http\Controllers\Backend;
 
 use Session;
-use Easel\Models\Post;
+use App\Models\Post;
 use Easel\Jobs\PostFormFields;
 use Easel\Http\Controllers\Controller;
 use Easel\Http\Requests\PostCreateRequest;
@@ -47,7 +47,7 @@ class PostController extends Controller
         $post = Post::create($request->postFillData());
         $post->syncTags($request->get('tags', []));
 
-        Session::set('_new-post', trans('canvas::messages.create_success', ['entity' => 'post']));
+        $request->session()->put('_new-post', trans('canvas::messages.create_success', ['entity' => 'post']));
 
         return redirect()->route('canvas.admin.post.edit', $post->id);
     }
@@ -81,7 +81,7 @@ class PostController extends Controller
         $post->save();
         $post->syncTags($request->get('tags', []));
 
-        Session::set('_update-post', trans('canvas::messages.update_success', ['entity' => 'Post']));
+        $request->session()->put('_update-post', trans('canvas::messages.update_success', ['entity' => 'Post']));
 
         return redirect()->route('canvas.admin.post.edit', $id);
     }
@@ -99,7 +99,7 @@ class PostController extends Controller
         $post->tags()->detach();
         $post->delete();
 
-        Session::set('_delete-post', trans('canvas::messages.delete_success', ['entity' => 'Post']));
+        $request->session()->put('_delete-post', trans('canvas::messages.delete_success', ['entity' => 'Post']));
 
         return redirect()->route('canvas.admin.post.index');
     }

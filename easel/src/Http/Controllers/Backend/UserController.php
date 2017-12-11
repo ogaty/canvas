@@ -7,6 +7,7 @@ use App\Helpers\CanvasHelper;
 use Illuminate\Support\Facades\DB;
 use Easel\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Http\Request;
 use Easel\Http\Requests\UserCreateRequest;
 use Easel\Http\Requests\UserUpdateRequest;
 use Easel\Http\Requests\PasswordUpdateRequest;
@@ -49,7 +50,7 @@ class UserController extends Controller
         $user->password = bcrypt($request->password);
         $user->save();
 
-        Session::set('_new-user', trans('canvas::messages.create_success', ['entity' => 'user']));
+        $request->session->put('_new-user', trans('canvas::messages.create_success', ['entity' => 'user']));
 
         return redirect()->route('canvas.admin.user.index');
     }
@@ -82,7 +83,7 @@ class UserController extends Controller
         $data->fill($request->toArray())->save();
         $data->save();
 
-        Session::set('_updateUser', trans('canvas::messages.update_success', ['entity' => 'User']));
+        $request->session->put('_updateUser', trans('canvas::messages.update_success', ['entity' => 'User']));
 
         return redirect()->route('canvas.admin.user.edit', compact('data'));
     }
@@ -113,7 +114,7 @@ class UserController extends Controller
     {
         User::where('id', $id)->update(['password' => bcrypt($request->new_password)]);
 
-        Session::set('_updatePassword', trans('canvas::messages.update_success', ['entity' => 'Password']));
+        $reuest->session()->put('_updatePassword', trans('canvas::messages.update_success', ['entity' => 'Password']));
 
         return redirect()->route('canvas.admin.user.edit', $id);
     }
@@ -125,7 +126,7 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
         // First, assign all the posts authored by this user to another existing user in the system.
         $existingUser = User::where('id', '!=', $id)->first();
@@ -137,7 +138,7 @@ class UserController extends Controller
         $user = User::findOrFail($id);
         $user->delete();
 
-        Session::set('_delete-user', trans('canvas::messages.delete_success', ['entity' => 'User']));
+        $request->session->put('_delete-user', trans('canvas::messages.delete_success', ['entity' => 'User']));
 
         return redirect()->route('canvas.admin.user.index');
     }
