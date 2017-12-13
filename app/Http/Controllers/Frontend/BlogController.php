@@ -8,7 +8,7 @@ use App\Models\Post;
 use App\Models\User;
 use App\Models\Settings;
 use Illuminate\Http\Request;
-use Easel\Jobs\BlogIndexData;
+use App\Jobs\BlogIndexData;
 use Easel\Jobs\BlogFeedData;
 use Easel\Jobs\BlogXmlData;
 use Easel\Http\Controllers\Controller;
@@ -26,9 +26,17 @@ class BlogController extends Controller
     public function index(Request $request)
     {
         $tag = $request->get('tag');
-        $data = $this->dispatch(new BlogIndexData($tag));
         //$layout = $tag ? Tag::layout($tag)->first() : config('blog.tag_layout');
-        $layout = (new NewThemeManager(resolve('app'), resolve('files')))->getViewPath() . "frontend.blog.index";
+        if ($request->is('/') || $request->is('blog*')) {
+            $data = $this->dispatch(new BlogIndexData($tag));
+            $layout = (new NewThemeManager(resolve('app'), resolve('files')))->getViewPath() . "frontend.blog.index";
+        } else {
+// custom posts
+// べた書きのほうがたぶん手っ取り早い
+// } elseif ($request->is('techs*')) {
+            $data = $this->dispatch(new BlogIndexData($tag));
+            $layout = (new NewThemeManager(resolve('app'), resolve('files')))->getViewPath() . "frontend.blog.index";
+        }
         $socialHeaderIconsUser = User::where('id', Settings::socialHeaderIconsUserId())->first();
         $css = Settings::customCSS();
         $js = Settings::customJS();

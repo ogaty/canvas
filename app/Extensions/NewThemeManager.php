@@ -87,7 +87,7 @@ class NewThemeManager
         if ($theme == 'cnvs-paper-dark') {
             return "";
         }
-        $prefix = $theme == 'default' ? '' : $themeName . '/';
+        $prefix = $theme == 'default' ? '' : $theme . '/';
         return $prefix;
     }
 

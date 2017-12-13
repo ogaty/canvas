@@ -30,6 +30,9 @@ Route::group([
         Route::get('post/{slug}', 'Frontend\BlogController@showPost')->name('canvas.blog.post.show');
     });
 
+    // こっちのほうが楽だ
     Route::get('/techs', 'Frontend\BlogController@index')->name('techs.home');
+    Route::get('/fortune', 'Frontend\FortuneController@index')->name('fortune.home');
+    Route::get('/fortune/sabian', 'Frontend\SabianController@index')->name('fortune.sabian');
 
 });

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AppendColumn extends Migration
+class AddCustomCode extends Migration
 {
     /**
      * Run the migrations.
@@ -15,10 +15,7 @@ class AppendColumn extends Migration
     {
         Schema::table('canvas_posts', function (Blueprint $table) {
             //
-            $table->text('description_raw')->nullable()->after('subtitle');
-            $table->text('description_html')->nullable()->after('description_raw');
-            $table->integer('ad1')->default(0)->after('layout');
-            $table->integer('ad2')->default(0)->after('ad1');
+            $table->string('custom_code')->default('blog')->after('slug');
         });
     }
 
@@ -31,10 +28,7 @@ class AppendColumn extends Migration
     {
         Schema::table('canvas_posts', function (Blueprint $table) {
             //
-            $table->dropColumn('description_raw');
-            $table->dropColumn('description_html');
-            $table->dropColumn('ad1');
-            $table->dropColumn('ad2');
+            $table->dropColumn('custom_code');
         });
     }
 }
