@@ -36,7 +36,7 @@ Route::group([
     Route::get('/fortune/sabian', 'Frontend\SabianController@index')->name('fortune.sabian');
 
     /* Installation page route. */
-    Route::get('canvas.install', 'Easel\Http\Controllers\Setup\InstallController@index')->name('canvas.install');
+    Route::get('canvas.install', 'App\Http\Controllers\Setup\InstallController@index')->name('canvas.install');
 
         /* Authentication routes. */
         Route::group([

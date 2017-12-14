@@ -8,7 +8,7 @@ use App\Helpers\CanvasHelper;
 use Easel\Extensions\ThemeManager;
 use App\Extensions\NewThemeManager;
 use App\Http\Controllers\Controller;
-use Easel\Http\Requests\SettingsUpdateRequest;
+use App\Http\Requests\SettingsUpdateRequest;
 use Illuminate\Filesystem\Filesystem;
 
 class SettingsController extends Controller
