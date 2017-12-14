@@ -1,6 +1,6 @@
 <?php
 
-namespace Easel\Jobs;
+namespace App\Jobs;
 
 use Carbon\Carbon;
 use App\Models\Tag;

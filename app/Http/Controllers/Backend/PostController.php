@@ -1,10 +1,10 @@
 <?php
 
-namespace Easel\Http\Controllers\Backend;
+namespace App\Http\Controllers\Backend;
 
 use Session;
 use App\Models\Post;
-use Easel\Jobs\PostFormFields;
+use App\Jobs\PostFormFields;
 use Easel\Http\Controllers\Controller;
 use Easel\Http\Requests\PostCreateRequest;
 use Easel\Http\Requests\PostUpdateRequest;

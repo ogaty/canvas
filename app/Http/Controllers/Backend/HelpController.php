@@ -1,8 +1,8 @@
 <?php
 
-namespace Easel\Http\Controllers\Backend;
+namespace App\Http\Controllers\Backend;
 
-use Easel\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 
 class HelpController extends Controller
 {

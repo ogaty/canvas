@@ -1,6 +1,6 @@
 <?php
 
-namespace Easel\Http\Controllers\Backend;
+namespace App\Http\Controllers\Backend;
 
 use App\Models\Tag;
 use App\Models\Post;

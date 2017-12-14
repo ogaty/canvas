@@ -1,6 +1,6 @@
 <?php
 
-namespace Easel\Http\Controllers\Backend;
+namespace App\Http\Controllers\Backend;
 
 use App\Models\User;
 use App\Helpers\CanvasHelper;

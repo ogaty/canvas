@@ -39,7 +39,7 @@ Route::group([
 Route::group([
     'middlewareGroups' => RouteHelper::getGeneralMiddlewareGroups(),
     'middleware' => RouteHelper::getAdminMiddleware(),
-    'namespace' => 'Easel\Http\Controllers\Backend',
+    'namespace' => 'App\Http\Controllers\Backend',
 ], function () {
     /* Admin dashboard page route. */
     Route::get(RouteHelper::getAdminPrefix(), 'HomeController@index')->name('canvas.admin');
