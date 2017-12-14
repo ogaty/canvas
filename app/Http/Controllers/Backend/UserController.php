@@ -5,12 +5,12 @@ namespace App\Http\Controllers\Backend;
 use App\Models\User;
 use App\Helpers\CanvasHelper;
 use Illuminate\Support\Facades\DB;
-use Easel\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
-use Easel\Http\Requests\UserCreateRequest;
-use Easel\Http\Requests\UserUpdateRequest;
-use Easel\Http\Requests\PasswordUpdateRequest;
+use App\Http\Requests\UserCreateRequest;
+use App\Http\Requests\UserUpdateRequest;
+use App\Http\Requests\PasswordUpdateRequest;
 
 class UserController extends Controller
 {

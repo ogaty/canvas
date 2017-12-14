@@ -8,7 +8,7 @@ use App\Models\User;
 use App\Models\Settings;
 use App\Helpers\CanvasHelper;
 use Illuminate\Support\Facades\App;
-use Easel\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {

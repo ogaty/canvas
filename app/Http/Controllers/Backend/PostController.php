@@ -5,9 +5,9 @@ namespace App\Http\Controllers\Backend;
 use Session;
 use App\Models\Post;
 use App\Jobs\PostFormFields;
-use Easel\Http\Controllers\Controller;
-use Easel\Http\Requests\PostCreateRequest;
-use Easel\Http\Requests\PostUpdateRequest;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\PostCreateRequest;
+use App\Http\Requests\PostUpdateRequest;
 
 class PostController extends Controller
 {

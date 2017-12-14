@@ -9,11 +9,11 @@ use App\Models\Post;
 use App\Models\User;
 use App\Models\PostTag;
 use App\Models\Settings;
-use Easel\Models\Migrations;
+use App\Models\Migrations;
 use App\Helpers\CanvasHelper;
-use Easel\Models\PasswordResets;
+use App\Models\PasswordResets;
 use Illuminate\Support\Facades\App;
-use Easel\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Http\Request;
 

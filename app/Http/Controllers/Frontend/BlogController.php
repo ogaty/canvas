@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 use App\Jobs\BlogIndexData;
 use App\Jobs\BlogFeedData;
 use App\Jobs\BlogXmlData;
-use Easel\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 use App\Extensions\NewThemeManager;
 use Carbon\Carbon;
 

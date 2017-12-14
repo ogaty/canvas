@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Backend;
 
 use Session;
 use App\Models\Tag;
-use Easel\Http\Controllers\Controller;
-use Easel\Http\Requests\TagCreateRequest;
-use Easel\Http\Requests\TagUpdateRequest;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\TagCreateRequest;
+use App\Http\Requests\TagUpdateRequest;
 use Illuminate\Http\Request;
 
 class TagController extends Controller

@@ -126,8 +126,6 @@ class CanvasServiceProvider extends ServiceProvider
      */
     private function handleRoutes()
     {
-        // Get the routes...
-        require realpath(__DIR__.'/../routes/web.php');
     }
 
     /**

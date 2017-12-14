@@ -1,4 +1,4 @@
-<form role="form" id="login" method="POST" action="{!! route('canvas.auth.login.store') !!}">
+<form role="form" id="login" method="POST" action="{!! route('login.store') !!}">
     {!! csrf_field() !!}
     <div class="form-group fg-line">
         <input type="email" id="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email">
@@ -18,6 +18,6 @@
     <button type="submit" name="submit" class="btn btn-block btn-primary m-t-10">Sign in</button>
     <br><br>
     <div style="text-align: center">
-        <a href="{!! route('canvas.auth.password.forgot') !!}" class="btn btn-link m-t-10">Forgot password</a><a href="{!! route('canvas.home') !!}" class="btn btn-link m-t-10">Back to Blog</a>
+        <a href="{!! route('password.forgot') !!}" class="btn btn-link m-t-10">Forgot password</a><a href="{!! route('canvas.home') !!}" class="btn btn-link m-t-10">Back to Blog</a>
     </div>
 </form>

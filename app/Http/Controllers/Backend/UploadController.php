@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Backend;
 
-use Easel\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 
 class UploadController extends Controller
 {

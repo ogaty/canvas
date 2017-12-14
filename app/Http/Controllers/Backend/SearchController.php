@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Models\Tag;
 use App\Models\Post;
 use App\Models\User;
-use Easel\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 
 class SearchController extends Controller
 {

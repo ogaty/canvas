@@ -7,7 +7,7 @@ use App\Models\Settings;
 use App\Helpers\CanvasHelper;
 use Easel\Extensions\ThemeManager;
 use App\Extensions\NewThemeManager;
-use Easel\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 use Easel\Http\Requests\SettingsUpdateRequest;
 use Illuminate\Filesystem\Filesystem;
 
