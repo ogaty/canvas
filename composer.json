@@ -14,7 +14,8 @@
         "cnvs/easel": "3.3.*",
         "cnvs/paper-dark": "*",
         "doctrine/dbal": "2.5.*",
-        "fzaninotto/faker": "~1.4"
+        "fzaninotto/faker": "~1.4",
+        "talvbansal/media-manager": "^2.5"
     },
     "require-dev": {
         "filp/whoops": "~2.0",

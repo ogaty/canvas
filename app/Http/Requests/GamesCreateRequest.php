@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use App\Helpers\CanvasHelper;
 use Illuminate\Foundation\Http\FormRequest;
 
-class PostCreateRequest extends FormRequest
+class GamesCreateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -39,7 +39,7 @@ class PostCreateRequest extends FormRequest
             'user_id' => $this->user_id,
             'title' => $this->title,
             'slug' => $this->slug,
-            'custom_code' => 'blog',
+            'custom_code' => 'games',
             'subtitle' => $this->subtitle,
             'page_image' => $this->page_image,
             'content_raw' => $this->get('content'),

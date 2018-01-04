@@ -31,12 +31,12 @@ Route::group([
     });
 
     // こっちのほうが楽だ
-    Route::get('/techs', 'Frontend\BlogController@index')->name('techs.home');
-    Route::get('/fortune', 'Frontend\FortuneController@index')->name('fortune.home');
-    Route::get('/fortune/sabian', 'Frontend\SabianController@index')->name('fortune.sabian');
+    Route::get('/techs', 'Frontend\TechsController@index')->name('techs.home');
+    Route::get('/sabian', 'Frontend\FortuneController@index')->name('fortune.home');
+    Route::get('/sabian/sabian', 'Frontend\SabianController@index')->name('fortune.sabian');
 
     /* Installation page route. */
-    Route::get('canvas.install', 'App\Http\Controllers\Setup\InstallController@index')->name('canvas.install');
+    Route::get('canvas.install', 'Setup\InstallController@index')->name('canvas.install');
 
         /* Authentication routes. */
         Route::group([
@@ -83,6 +83,39 @@ Route::group([
             'destroy' => 'canvas.admin.post.destroy',
         ],
     ]);
+    Route::resource(RouteHelper::getAdminPrefix().'/techs', 'TechsController', [
+        'except' => 'show',
+        'names' => [
+            'index' => 'canvas.admin.techs.index',
+            'create' => 'canvas.admin.techs.create',
+            'store' => 'canvas.admin.techs.store',
+            'edit' => 'canvas.admin.techs.edit',
+            'update' => 'canvas.admin.techs.update',
+            'destroy' => 'canvas.admin.techs.destroy',
+        ],
+    ]);
+    Route::resource(RouteHelper::getAdminPrefix().'/games', 'GamesController', [
+        'except' => 'show',
+        'names' => [
+            'index' => 'canvas.admin.games.index',
+            'create' => 'canvas.admin.games.create',
+            'store' => 'canvas.admin.games.store',
+            'edit' => 'canvas.admin.games.edit',
+            'update' => 'canvas.admin.games.update',
+            'destroy' => 'canvas.admin.games.destroy',
+        ],
+    ]);
+    Route::resource(RouteHelper::getAdminPrefix().'/sabian', 'SabianController', [
+        'except' => 'show',
+        'names' => [
+            'index' => 'canvas.admin.sabian.index',
+            'create' => 'canvas.admin.sabian.create',
+            'store' => 'canvas.admin.sabian.store',
+            'edit' => 'canvas.admin.sabian.edit',
+            'update' => 'canvas.admin.sabian.update',
+            'destroy' => 'canvas.admin.sabian.destroy',
+        ],
+    ]);
 
     /* Tag page routes. */
     Route::resource(RouteHelper::getAdminPrefix().'/tag', 'TagController', [
@@ -99,6 +132,7 @@ Route::group([
 
     /* Media library page routes. */
     Route::get(RouteHelper::getAdminPrefix().'/upload', 'UploadController@index')->name('canvas.admin.upload');
+    Route::post(RouteHelper::getAdminPrefix().'/upload/file', 'UploadController@upload')->name('canvas.admin.fileup');
     \TalvBansal\MediaManager\Routes\MediaRoutes::get();
 
     /* Profile privacy page routes. */

@@ -2,9 +2,13 @@
   "private": true,
   "scripts": {
     "prod": "gulp --production",
-    "dev": "gulp watch"
+    "dev": "gulp watch",
+    "js": "browserify -t babelify -t vueify resources/assets/js/app.js --outfile public/js/app.js",
+    "css": "node-sass resources/assets/sass/backend/_base.scss public/css/backend.css; node-sass resources/assets/sass/frontend/_base.scss public/css/frontend.css"
   },
   "dependencies": {
+    "babel-core": "^6.26.0",
+    "babelify": "^8.0.0",
     "bootstrap-sass": "^3.3.7",
     "font-awesome": "^4.6.3",
     "gulp": "^3.9.1",
@@ -15,7 +19,9 @@
     "laravel-elixir-vue-2": "^0.3.0",
     "laravel-elixir-webpack-official": "^1.0.8",
     "lodash": "^4.16.2",
+    "moment": "^2.19.4",
     "vue": "^2.0.1",
-    "vue-resource": "^1.0.3"
+    "vue-resource": "^1.0.3",
+    "vueify": "^9.4.1"
   }
 }

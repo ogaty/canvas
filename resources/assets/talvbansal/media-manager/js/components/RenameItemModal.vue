@@ -89,7 +89,7 @@
                         'type': (this.isFolder(this.currentFile)) ? 'Folder' : 'File'
                     };
 
-                    this.$http.post('/admin/browser/rename', data).then(
+                    this.$http.post('/adm/browser/rename', data).then(
                             function (response) {
                                 window.eventHub.$emit('media-manager-reload-folder');
                                 this.mediaManagerNotify(response.data.success);

@@ -78,7 +78,7 @@
                     var data = {
                         'path': this.currentFile.fullPath
                     };
-                    this.delete('/admin/browser/delete', data);
+                    this.delete('/adm/browser/delete', data);
                 }
             },
 
@@ -88,7 +88,7 @@
                         'folder': this.currentPath,
                         'del_folder': this.currentFile
                     };
-                    this.delete('/admin/browser/folder', data);
+                    this.delete('/adm/browser/folder', data);
                 }
             },
 

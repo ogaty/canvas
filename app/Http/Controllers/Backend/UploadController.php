@@ -15,4 +15,9 @@ class UploadController extends Controller
     {
         return view('backend.upload.index');
     }
+
+    public function upload()
+    {
+            var_dump($_FILES['files']);
+    }
 }

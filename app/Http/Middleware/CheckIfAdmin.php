@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Auth;
 use Closure;
-use Easel\Models\User;
+use App\Models\User;
 
 class CheckIfAdmin
 {

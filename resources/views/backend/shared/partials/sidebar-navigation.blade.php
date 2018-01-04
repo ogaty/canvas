@@ -23,11 +23,25 @@
                 <li><a href="{!! route('canvas.admin.post.create') !!}" @if (Route::is('canvas.admin.post.create')) class="active" @endif>Add New</a></li>
             </ul>
         </li>
-        <li class="sub-menu @if (Route::is('canvas.admin.post.index') || Route::is('canvas.admin.post.create') || Route::is('canvas.admin.post.edit'))active toggled @endif">
+        <li class="sub-menu @if (Route::is('canvas.admin.techs.index') || Route::is('canvas.admin.techs.create') || Route::is('canvas.admin.techs.edit'))active toggled @endif">
             <a href="" data-ma-action="submenu-toggle"><i class="zmdi zmdi-collection-bookmark"></i> Techs</a>
             <ul>
-                <li><a href="{!! route('canvas.admin.post.index') !!}" @if (Route::is('canvas.admin.post.index') || Route::is('canvas.admin.post.edit')) class="active" @endif>All Techs <span class="label label-default label-totals">{!! App\Models\Post::count() !!}</span></a></li>
-                <li><a href="{!! route('canvas.admin.post.create') !!}" @if (Route::is('canvas.admin.post.create')) class="active" @endif>Add New</a></li>
+                <li><a href="{!! route('canvas.admin.techs.index') !!}" @if (Route::is('canvas.admin.techs.index') || Route::is('canvas.admin.techs.edit')) class="active" @endif>All Techs <span class="label label-default label-totals">{!! App\Models\Post::count() !!}</span></a></li>
+                <li><a href="{!! route('canvas.admin.techs.create') !!}" @if (Route::is('canvas.admin.techs.create')) class="active" @endif>Add New</a></li>
+            </ul>
+        </li>
+        <li class="sub-menu @if (Route::is('canvas.admin.games.index') || Route::is('canvas.admin.games.create') || Route::is('canvas.admin.games.edit'))active toggled @endif">
+            <a href="" data-ma-action="submenu-toggle"><i class="zmdi zmdi-collection-bookmark"></i> Games</a>
+            <ul>
+                <li><a href="{!! route('canvas.admin.games.index') !!}" @if (Route::is('canvas.admin.games.index') || Route::is('canvas.admin.games.edit')) class="active" @endif>All Games <span class="label label-default label-totals">{!! App\Models\Post::count() !!}</span></a></li>
+                <li><a href="{!! route('canvas.admin.games.create') !!}" @if (Route::is('canvas.admin.games.create')) class="active" @endif>Add New</a></li>
+            </ul>
+        </li>
+        <li class="sub-menu @if (Route::is('canvas.admin.sabian.index') || Route::is('canvas.admin.sabian.create') || Route::is('canvas.admin.sabian.edit'))active toggled @endif">
+            <a href="" data-ma-action="submenu-toggle"><i class="zmdi zmdi-collection-bookmark"></i> Sabian</a>
+            <ul>
+                <li><a href="{!! route('canvas.admin.sabian.index') !!}" @if (Route::is('canvas.admin.sabian.index') || Route::is('canvas.admin.sabian.edit')) class="active" @endif>All Sabians <span class="label label-default label-totals">{!! App\Models\Post::count() !!}</span></a></li>
+                <li><a href="{!! route('canvas.admin.sabian.create') !!}" @if (Route::is('canvas.admin.sabian.create')) class="active" @endif>Add New</a></li>
             </ul>
         </li>
         <li class="sub-menu @if (Route::is('canvas.admin.tag.index') || Route::is('canvas.admin.tag.create') || Route::is('canvas.admin.tag.edit'))active toggled @endif">

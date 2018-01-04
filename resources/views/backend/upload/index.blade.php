@@ -34,6 +34,16 @@
                         </h2>
                     </div>
 
+                    <input type="file" class="" name="files[]" multiple="multiple"/>
+<button id="uploadFile">upload</button>
+<table class="table">
+<tr>
+  <th>Name</th>
+  <th>Type</th>
+  <th>Date</th>
+</tr>
+</table>
+
                     <media-manager></media-manager>
                 </div>
             </div>
@@ -43,6 +53,42 @@
 
 @section('unique-js')
     <script>
+$(function() {
+$("#uploadFile").on("click", function() {
+        var fileSelectDom = $('[type=file]')[0];
+        var files = fileSelectDom.files;
+
+
+        event.preventDefault();
+
+                /**
+                 * Create a new form request object.
+                 * Gather all of the files to be uploaded and append them to it.
+                 * Attach the current path so the server knows where to upload the files to.
+                 * Send a post request to the server...
+                 */
+                var form = new FormData();
+
+                for (var key in files) {
+                    form.append('files[' + key + ']', files[key]);
+                }
+                axios.post('/adm/upload/file', form).then(
+                    function (response) {
+                            console.log(response);
+                        this.mediaManagerNotify(response.data.success);
+                        this.loadFolder(this.currentPath);
+                    },
+                    function (response) {
+                        var error = (response.data.error) ? response.data.error : response.statusText;
+                        // when uploading we might have some files uploaded and others fail
+                        if (response.data.notices) this.mediaManagerNotify(response.data.notices);
+                            this.mediaManagerNotify(error, 'danger', 5000);
+                            this.loadFolder(this.currentPath);
+                        }
+                    );
+});
+});
+
         new Vue({
             el: '#main',
             created: function () {

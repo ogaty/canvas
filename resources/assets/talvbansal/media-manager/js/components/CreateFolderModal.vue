@@ -81,7 +81,7 @@
                 };
 
                 this.loading = true;
-                this.$http.post('/admin/browser/folder', data).then(
+                this.$http.post('/adm/browser/folder', data).then(
                         function (response) {
                             this.mediaManagerNotify(response.data.success);
                             window.eventHub.$emit('media-manager-reload-folder');
