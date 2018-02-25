@@ -3,7 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Helpers\SetupHelper;
-use Easel\Extensions\ThemeManager;
+use App\Extensions\ThemeManager;
 
 class Theme extends CanvasCommand
 {

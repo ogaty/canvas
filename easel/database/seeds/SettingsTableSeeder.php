@@ -2,7 +2,7 @@
 
 namespace Canvas;
 
-use Canvas\Models\Settings;
+use App\Models\Settings;
 use Illuminate\Database\Seeder;
 
 class SettingsTableSeeder extends Seeder

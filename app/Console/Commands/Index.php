@@ -50,7 +50,7 @@ class Index extends CanvasCommand
     public function createPostsIndex()
     {
         $this->comment(PHP_EOL.'Indexing the posts table, saving to '.storage_path(CanvasHelper::INDEXES['posts']).'...');
-        Artisan::call('scout:import', ['model' => 'Easel\\Models\\Post']);
+        Artisan::call('scout:import', ['model' => 'App\\Models\\Post']);
     }
 
     public function createTagsIndex()

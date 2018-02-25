@@ -2,7 +2,7 @@
 
 namespace Canvas;
 
-use Canvas\Models\Post;
+use App\Models\Post;
 use Illuminate\Database\Seeder;
 
 class PostTagTableSeeder extends Seeder

@@ -7,7 +7,7 @@ use App\Models\User;
 use App\Meta\Constants;
 use App\Helpers\SetupHelper;
 use App\Helpers\ConfigHelper;
-use Easel\Extensions\ThemeManager;
+use App\Extensions\NewThemeManager;
 use Illuminate\Support\Facades\Artisan;
 
 class Install extends CanvasCommand
@@ -180,7 +180,7 @@ class Install extends CanvasCommand
                 $headers = ['Login Email', 'Login Password', 'Version', 'Theme'];
                 $data = User::select('email', 'password')->get()->toArray();
 
-                $themeManager = new ThemeManager(resolve('app'), resolve('files'));
+                $themeManager = new NewThemeManager(resolve('app'), resolve('files'));
                 $activeTheme = $themeManager->getTheme($themeManager->getActiveTheme()) ?: $themeManager->getDefaultTheme();
                 $data[0]['password'] = 'Your chosen password.';
                 array_push($data[0], 'Canvas'.' '.$this->canvasVersion(), $activeTheme->getName().' '.$activeTheme->getVersion());

@@ -1,6 +1,9 @@
 @if(Route::is('canvas.admin.post.create'))
     <form class="keyboard-save" role="form" method="POST" id="postCreate" action="{!! route('canvas.admin.post.store') !!}">
     <input type="hidden" name="user_id" value="{!! Auth::guard('canvas')->user()->id !!}">
+@elseif(Route::is('canvas.admin.techs.create'))
+    <form class="keyboard-save" role="form" method="POST" id="postCreate" action="{!! route('canvas.admin.techs.store') !!}">
+    <input type="hidden" name="user_id" value="{!! Auth::guard('canvas')->user()->id !!}">
 @else
     <form class="keyboard-save" role="form" method="POST" id="postUpdate" action="{!! route('canvas.admin.post.update', $id) !!}">
         <input type="hidden" name="_method" value="PUT">
@@ -21,6 +24,13 @@
                             <li class="active">New Post</li>
                         </ol>
                         <h2>Create a New Post</h2>
+                    @elseif(Route::is('canvas.admin.techs.create'))
+                        <ol class="breadcrumb">
+                            <li><a href="{!! route('canvas.admin') !!}">Home</a></li>
+                            <li><a href="{!! route('canvas.admin.techs.index') !!}">Techs Posts</a></li>
+                            <li class="active">New Techs Post</li>
+                        </ol>
+                        <h2>Create a New Techs Post</h2>
                     @else
                         <ol class="breadcrumb">
                             <li><a href="{!! route('canvas.admin') !!}">Home</a></li>
