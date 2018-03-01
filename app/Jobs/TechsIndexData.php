@@ -11,7 +11,7 @@ use Illuminate\Queue\SerializesModels;
 /**
  * Class BlogIndexData.
  */
-class BlogIndexData
+class TechsIndexData
 {
     use SerializesModels;
 
@@ -57,8 +57,8 @@ class BlogIndexData
             ->whereHas('tags', function ($q) use ($tag) {
                 $q->where('id', '=', $tag->id);
             })
-            ->where('custom_code', 'blog')
             ->where('is_published', 1)
+            ->where('custom_code', 'techs')
             ->orderBy('published_at', $reverse_direction ? 'asc' : 'desc')
             ->simplePaginate(config('blog.posts_per_page'));
 
@@ -85,8 +85,8 @@ class BlogIndexData
     {
         $posts = Post::with('tags')
             ->where('published_at', '<=', Carbon::now())
-            ->where('custom_code', 'blog')
             ->where('is_published', 1)
+            ->where('custom_code', 'techs')
             ->orderBy('published_at', 'desc')
             ->simplePaginate(config('blog.posts_per_page'));
 
