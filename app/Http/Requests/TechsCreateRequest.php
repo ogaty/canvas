@@ -37,6 +37,7 @@ class TechsCreateRequest extends FormRequest
     {
         return [
             'user_id' => $this->user_id,
+            'custom_code' => $this->custom_code,
             'title' => $this->title,
             'slug' => $this->slug,
             'custom_code' => 'techs',

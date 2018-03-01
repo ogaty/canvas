@@ -1,9 +1,11 @@
 @if(Route::is('canvas.admin.post.create'))
     <form class="keyboard-save" role="form" method="POST" id="postCreate" action="{!! route('canvas.admin.post.store') !!}">
     <input type="hidden" name="user_id" value="{!! Auth::guard('canvas')->user()->id !!}">
+    <input type="hidden" name="custom_code" value="blog">
 @elseif(Route::is('canvas.admin.techs.create'))
     <form class="keyboard-save" role="form" method="POST" id="postCreate" action="{!! route('canvas.admin.techs.store') !!}">
     <input type="hidden" name="user_id" value="{!! Auth::guard('canvas')->user()->id !!}">
+    <input type="hidden" name="custom_code" value="techs">
 @else
     <form class="keyboard-save" role="form" method="POST" id="postUpdate" action="{!! route('canvas.admin.post.update', $id) !!}">
         <input type="hidden" name="_method" value="PUT">
@@ -102,7 +104,7 @@
                         </div>
                     </div>
                     <br>
-                    @if(!Route::is('canvas.admin.post.create'))
+                    @if(!Route::is('canvas.admin.post.create') && !Route::is('canvas.admin.techs.create'))
                         <div class="form-group">
                             <div class="fg-line">
                                 <label class="fg-label"><i class="zmdi zmdi-link"></i>&nbsp;&nbsp;Permalink</label><br>
@@ -112,7 +114,7 @@
                         <br>
                     @endif
                     <div class="form-group">
-                        @if(Route::is('canvas.admin.post.create'))
+                        @if(Route::is('canvas.admin.post.create') || Route::is('canvas.admin.techs.create'))
                             <button type="submit" class="btn btn-primary btn-icon-text">
                                 <i class="zmdi zmdi-floppy"></i> Publish
                             </button>

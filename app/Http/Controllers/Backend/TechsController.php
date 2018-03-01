@@ -56,7 +56,7 @@ class TechsController extends Controller
         return redirect()->route('canvas.admin.techs.edit', $id);
     }
 
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
         $post = Post::findOrFail($id);
         $post->tags()->detach();

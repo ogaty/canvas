@@ -29,8 +29,8 @@
                         </ul>
                         @include('backend.shared.partials.errors')
                         @include('backend.shared.partials.success')
-                        <h2>Posts&nbsp;
-                            <a href="{!! route('canvas.admin.post.create') !!}" id="create-post"><i class="zmdi zmdi-plus-circle" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Create a new post"></i></a>
+                        <h2>Techs Posts&nbsp;
+                            <a href="{!! route('canvas.admin.techs.create') !!}" id="create-post"><i class="zmdi zmdi-plus-circle" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Create a new techs"></i></a>
 
                             <small>This page provides a comprehensive overview of all your blog posts. Click the <span class="zmdi zmdi-edit text-primary"></span> icon next to each post to update its contents or the <span class="zmdi zmdi-search text-primary"></span> icon to see what it looks like to your readers.</small>
                         </h2>

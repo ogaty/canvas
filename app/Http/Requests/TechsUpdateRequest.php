@@ -7,7 +7,7 @@ use Illuminate\Validation\Rule;
 use App\Helpers\CanvasHelper;
 use Illuminate\Foundation\Http\FormRequest;
 
-class PostUpdateRequest extends FormRequest
+class TechsUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -44,7 +44,7 @@ class PostUpdateRequest extends FormRequest
     {
         return [
             'user_id' => $this->user_id,
-            'custom_code' => 'blog',
+            'custom_code' => 'techs',
             'title' => $this->title,
             'slug' => $this->slug,
             'subtitle' => $this->subtitle,

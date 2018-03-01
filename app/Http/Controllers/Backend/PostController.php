@@ -93,7 +93,7 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
         $post = Post::findOrFail($id);
         $post->tags()->detach();
@@ -101,6 +101,6 @@ class PostController extends Controller
 
         $request->session()->put('_delete-post', trans('canvas::messages.delete_success', ['entity' => 'Post']));
 
-        return redirect()->route('canvas.admin.post.index');
+        return redirect()->route('canvas.admin.techs.index');
     }
 }

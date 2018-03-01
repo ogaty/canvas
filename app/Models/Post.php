@@ -38,6 +38,7 @@ class Post extends Model
     protected $fillable = [
         'user_id',
         'slug',
+        'custom_code',
         'title',
         'subtitle',
         'content_raw',
