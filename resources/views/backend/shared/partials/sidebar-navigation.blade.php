@@ -16,6 +16,7 @@
     </div>
     <ul class="main-menu main-ul">
         <li @if (Route::is('canvas.admin')) class="active" @endif><a href="{!! route('canvas.admin') !!}"><i class="zmdi zmdi-home"></i> Home</a></li>
+        <li><a href="{!! route('canvas.home') !!}"><i class="zmdi zmdi-home"></i> View Site</a></li>
         <li class="sub-menu @if (Route::is('canvas.admin.post.index') || Route::is('canvas.admin.post.create') || Route::is('canvas.admin.post.edit'))active toggled @endif">
             <a href="" data-ma-action="submenu-toggle"><i class="zmdi zmdi-collection-bookmark"></i> Posts</a>
             <ul>
