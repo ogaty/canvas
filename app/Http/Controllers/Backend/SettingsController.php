@@ -105,7 +105,7 @@ class SettingsController extends Controller
         Settings::updateOrCreate(['setting_name' => 'ad1'], ['setting_value' => $request->toArray()['ad1']]);
         Settings::updateOrCreate(['setting_name' => 'ad2'], ['setting_value' => $request->toArray()['ad2']]);
 
-        Session::set('_update-settings', trans('canvas::messages.save_settings_success'));
+        $request->session()->put('_update-settings', trans('canvas::messages.save_settings_success', ['entity' => 'User']));
 
         // Update theme
         $this->themeManager->setActiveTheme($request->theme);
