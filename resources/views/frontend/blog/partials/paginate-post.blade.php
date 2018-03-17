@@ -1,8 +1,9 @@
+<div class="post-nav">
 <div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <div class="">
+        <div class="">
             <br>
-            <ul class="pager">
+            <ul class="pager clearfix">
                 @if ($tag && $tag->reverse_direction)
                     @if ($post->olderPost($tag))
                         <li class="previous">
@@ -41,4 +42,5 @@
             </ul>
         </div>
     </div>
+</div>
 </div>

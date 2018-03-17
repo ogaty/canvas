@@ -1,0 +1,36 @@
+@import "./themes/_blue";
+@import "./partials/_new-header";
+@import "./partials/_parts";
+@import "./partials/_dropdown";
+
+body {
+    font-family: roboto;
+    font-size: 13px;
+    line-height: 1.42857143;
+    color: #5e5e5e;
+    background-color: #edecec;
+    font-weight: 400;
+    position: relative;
+    margin: 0;
+}
+
+a {
+    color: #0072c6;
+    text-decoration: none;
+    background: transparent;
+}
+
+img {
+    border: 0;
+}
+
+#main {
+    position: relative;
+    padding-bottom: 110px;
+    padding-top: 100px;
+}
+
+.clearfix:after {
+    content: " ";
+    display: table;
+}

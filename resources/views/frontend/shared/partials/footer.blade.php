@@ -3,10 +3,10 @@
         @include('frontend.blog.partials.disqus')
     @endif
     <div style="text-align: center">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="">
+            <div class="">
                 <hr>
-                <p class="small">Proudly powered by <a href="https://cnvs.io" target="_blank">Canvas</a> &#183; <a href="{!! route('canvas.admin') !!}"><i class="fa fa-lock"></i> Sign In</a>
+                <p class="small">project ogatism</a>
                 </p>
             </div>
         </div>
@@ -14,7 +14,7 @@
 </div>
 
 <!-- scroll to top button -->
-<span id="top-link-block" class="hidden hover-button">
+<span id="top-link-block" class="hidden hover-button affix-top">
     <a id="scroll-to-top" href="#top">SCROLL TO TOP</a>
 </span>
 

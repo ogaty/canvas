@@ -1,4 +1,5 @@
-<ul class="pager">
+<div class="post-nav">
+<ul class="pager clearfix">
     {{-- Reverse direction --}}
     @if ($reverse_direction)
         @if ($posts->currentPage() > 1)
@@ -36,3 +37,4 @@
         @endif
     @endif
 </ul>
+</div>

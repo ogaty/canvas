@@ -80,6 +80,7 @@
                     <hr>
                 </div>
                 <div class="card-body card-padding">
+                    <br>
                     <label><i class="zmdi zmdi-eye"></i>&nbsp;&nbsp;Status</label>
                     <div class="form-group" style="padding-top: 10px">
                         <div class="toggle-switch toggle-switch-demo" data-ts-color="blue">
@@ -140,6 +141,7 @@
                     <hr>
                 </div>
                 <div class="card-body card-padding">
+                    <br>
                     <div class="form-group">
                         <div class="fg-line">
                             <div class="input-group">
@@ -163,6 +165,7 @@
                     <hr>
                 </div>
                 <div class="card-body card-padding">
+                    <br>
                     <div class="form-group">
                         <div class="fg-line">
                             <select name="tags[]" id="tags" class="selectpicker" multiple>
@@ -180,6 +183,7 @@
                     <hr>
                 </div>
                 <div class="card-body card-padding">
+                    <br>
                     <div class="form-group">
                         <div class="fg-line">
                             <textarea class="form-control auto-size" name="meta_description" id="meta_description" style="resize: vertical" placeholder="Meta Description">{!! $meta_description !!}</textarea>

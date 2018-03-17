@@ -12,9 +12,10 @@
 
 @section('content')
     <article>
+        <div class="post-detail">
         <div class="container" id="post">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="">
+                <div class="">
                     @if ($post->page_image)
                         <div class="text-center">
                             <img src="{{ asset($post->page_image) }}" class="post-hero">
@@ -29,7 +30,9 @@
                         @endif
                     </p>
 
-                    {!! $post->content_html !!}
+                    <div class="post-content">
+                        {!! $post->content_html !!}
+                    </div>
 
                     <p class="dts"><span>&#183;</span><span>&#183;</span><span>&#183;</span></p>
 
@@ -38,11 +41,12 @@
                 </div>
             </div>
         </div>
+        </div>
     </article>
 
     @include('frontend.blog.partials.paginate-post')
 @stop
 
 @section('unique-js')
-    <script src="{{ elixir('vendor/canvas/assets/js/frontend.js') }}" charset="utf-8"></script>
+    <script src="/js/new-frontend.js" charset="utf-8"></script>
 @endsection

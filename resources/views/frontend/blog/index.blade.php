@@ -11,17 +11,19 @@
 @section('twitter-description', \App\Models\Settings::blogDescription())
 
 @section('content')
+    <div class="site-body">    
     <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="">
+            <div class="">
                 @include('frontend.blog.partials.tag')
                 @include('frontend.blog.partials.posts')
                 @include('frontend.blog.partials.paginate-index')
             </div>
         </div>
     </div>
+    </div>
 @stop
 
 @section('unique-js')
-    <script src="/vendor/canvas/assets/js/frontend.js" charset="utf-8"></script>
+    <script src="/js/new-frontend.js" charset="utf-8"></script>
 @endsection

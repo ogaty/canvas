@@ -16,7 +16,6 @@
         </div>
     </div>
     <button type="submit" name="submit" class="btn btn-block btn-primary m-t-10">Sign in</button>
-    <br><br>
     <div style="text-align: center">
         <a href="{!! route('password.forgot') !!}" class="btn btn-link m-t-10">Forgot password</a><a href="{!! route('canvas.home') !!}" class="btn btn-link m-t-10">Back to Blog</a>
     </div>
