@@ -74,6 +74,11 @@ class NewThemeManager
         return Constants::DEFAULT_THEME_NAME;
     }
 
+    public function getTheme()
+    {
+        return Constants::DEFAULT_THEME_NAME;
+    }
+
     public function currentThemeName()
     {
         return Settings::themeName();
