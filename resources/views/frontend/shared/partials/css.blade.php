@@ -4,7 +4,7 @@
 <!--
 <link rel="stylesheet" type="text/css" href="{{ elixir('vendor/canvas/assets/css/frontend.css') }}">
 -->
-<link rel="stylesheet" type="text/css" href="/css/new-frontend.css">
+<link rel="stylesheet" type="text/css" href="/css/frontend/new-frontend.css">
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/prism.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/components/prism-php.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

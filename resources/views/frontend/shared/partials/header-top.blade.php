@@ -4,7 +4,7 @@
             <button type="submit" id="submit-button">
                  <i class="fa fa-search"></i>
             </button>
-            <input type="text" placeholder="Type to Search..." class="">
+            <input type="text" name="query" placeholder="Type to Search..." class="">
         </form>
         <ul class="header-top--social">
             @if (!empty($socialHeaderIconsUser->twitter))

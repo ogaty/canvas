@@ -87,7 +87,7 @@ class NewThemeManager
     public function getViewPath() : string
     {
         $theme = $this->currentThemeName();
-        logger("theme: {$theme}");
+//        logger("theme: {$theme}");
    
         if ($theme == 'cnvs-paper-dark') {
             return "";

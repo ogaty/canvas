@@ -35,6 +35,8 @@ Route::group([
     Route::get('/sabian', 'Frontend\FortuneController@index')->name('fortune.home');
     Route::get('/sabian/sabian', 'Frontend\SabianController@index')->name('fortune.sabian');
 
+    Route::get('/search', 'Frontend\SearchController@index')->name('search.index');
+
     /* Installation page route. */
     Route::get('canvas.install', 'Setup\InstallController@index')->name('canvas.install');
 
