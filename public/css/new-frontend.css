@@ -12,6 +12,13 @@ h1, h2, h3, h4, ol, p, ul {
   margin: 0;
   padding: 0; }
 
+h3 {
+  border-bottom: 2px solid #9999ff;
+  margin-bottom: 10px; }
+
+h4 {
+  font-size: 1.4rem; }
+
 a {
   background: 0 0; }
 
