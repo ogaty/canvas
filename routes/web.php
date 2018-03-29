@@ -201,6 +201,8 @@ Route::group([
                 Route::post('login', 'LoginController@login')->name('canvas.auth.login.store');
                 Route::get('logout', 'LoginController@logout')->name('canvas.auth.logout');
             });
+        });
+});
 
             /* Reset password routes. */
             Route::group(['prefix' => RouteHelper::getPasswordPrefix()], function () {
@@ -210,6 +212,4 @@ Route::group([
                 Route::get('reset/{token}', '\App\Http\Controllers\Auth\ResetPasswordController@showResetForm')->name('canvas.auth.password.reset');
                 Route::post('reset', '\App\Http\Controllers\Auth\ResetPasswordController@reset')->name('canvas.auth.password.reset.store');
             });
-        });
-});
 
