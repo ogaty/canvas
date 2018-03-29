@@ -215,12 +215,12 @@ button, input[type=button], input[type=submit] {
   font-size: 16px;
   line-height: 1.8;
   margin-top: 20px; }
-
-.post-content p {
-  margin-bottom: 20px; }
-
-.post-content ol {
-  padding-left: 1em; }
+  .post-content li {
+    list-style-position: inside; }
+  .post-content p {
+    margin-bottom: 20px; }
+  .post-content ol {
+    padding-left: 1em; }
 
 #author-content {
   background: #f5f5f5;
