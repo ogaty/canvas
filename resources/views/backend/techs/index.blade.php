@@ -22,7 +22,7 @@
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-right">
                                     <li>
-                                        <a href="{!! route('canvas.admin.post.index') !!}"><i class="zmdi zmdi-refresh-alt pd-r-5"></i> Refresh Posts</a>
+                                        <a href="{!! route('canvas.admin.techs.index') !!}"><i class="zmdi zmdi-refresh-alt pd-r-5"></i> Refresh Posts</a>
                                     </li>
                                 </ul>
                             </li>
@@ -64,7 +64,7 @@
                                         @else
                                             <td>{{ $post->created_at->format('Y/m/d') . "<br/>" }} Published</td>
                                         @endif
-                                        <td>{!! route('canvas.admin.post.edit', $post->id) !!}</td>
+                                        <td>{!! route('canvas.admin.techs.edit', $post->id) !!}</td>
                                         <td>{!! route('canvas.blog.post.show', $post->slug) !!}</td>
                                     </tr>
                                 @endforeach

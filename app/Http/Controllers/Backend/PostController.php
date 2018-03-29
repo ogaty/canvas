@@ -18,7 +18,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $data = Post::all();
+        $data = Post::where('custom_code', 'blog')->get();
 
         return view('backend.post.index', compact('data'));
     }
