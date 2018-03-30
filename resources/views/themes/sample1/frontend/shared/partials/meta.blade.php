@@ -12,7 +12,7 @@
 <!-- Favicon -->
 <link rel="icon" type="image/png" href="{{ asset('vendor/canvas/assets/images/favicon.png') }}">
 
-<link rel="alternate" type="application/rss+xml" title="chloe" href="http://chloe.ogatism.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="chloe" href="http://blog.ogatism.com/feed/">
 
 <!-- Facebook Open Graph Tags -->
 <meta property="og:title" content="@yield('og-title')">

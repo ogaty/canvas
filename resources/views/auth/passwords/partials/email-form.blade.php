@@ -1,4 +1,4 @@
-<form role="form" id="forgot-password" method="POST" action="{{ route('canvas.auth.password.forgot.store') }}">
+<form role="form" id="forgot-password" method="POST" action="{{ route('password.forgot.store') }}">
     {!! csrf_field() !!}
 
     @if(session()->has('status'))

@@ -39,28 +39,6 @@ Route::group([
 
     /* Installation page route. */
     Route::get('canvas.install', 'Setup\InstallController@index')->name('canvas.install');
-
-        /* Authentication routes. */
-        Route::group([
-            'namespace' => 'Auth',
-        ], function () {
-            Route::group([
-                'prefix' => RouteHelper::getAuthPrefix(),
-            ], function () {
-                Route::get('login', 'LoginController@showLoginForm')->name('canvas.login');
-                Route::post('login', 'LoginController@login')->name('login.store');
-                Route::get('logout', 'LoginController@logout')->name('logout');
-            });
-
-            /* Reset password routes. */
-            Route::group(['prefix' => RouteHelper::getPasswordPrefix()], function () {
-                Route::post('/', 'PasswordController@updatePassword')->name('password.update');
-                Route::get('forgot', 'ForgotPasswordController@showLinkRequestForm')->name('password.forgot');
-                Route::post('forgot', 'ForgotPasswordController@sendResetLinkEmail')->name('password.forgot.store');
-                Route::get('reset/{token}', 'ResetPasswordController@showResetForm')->name('password.reset');
-                Route::post('reset', 'ResetPasswordController@reset')->name('password.reset.store');
-            });
-        });
 });
 
 /* Backend page routes. */
@@ -189,19 +167,6 @@ Route::group([
         Route::post(RouteHelper::getAdminPrefix().'/settings', '\App\Http\Controllers\Backend\SettingsController@store')->name('canvas.admin.settings');
     });
 
-
-        /* Authentication routes. */
-        Route::group([
-            'namespace' => 'Canvas\Http\Controllers\Auth',
-        ], function () {
-            Route::group([
-                'prefix' => RouteHelper::getAuthPrefix(),
-            ], function () {
-                Route::get('login', 'LoginController@showLoginForm')->name('canvas.login');
-                Route::post('login', 'LoginController@login')->name('canvas.auth.login.store');
-                Route::get('logout', 'LoginController@logout')->name('canvas.auth.logout');
-            });
-        });
 });
 
 /* Reset password routes. */
@@ -212,6 +177,19 @@ Route::group(['prefix' => RouteHelper::getPasswordPrefix()], function () {
     Route::get('reset/{token}', '\App\Http\Controllers\Auth\ResetPasswordController@showResetForm')->name('canvas.auth.password.reset');
     Route::post('reset', '\App\Http\Controllers\Auth\ResetPasswordController@reset')->name('canvas.auth.password.reset.store');
 });
+
+/* Reset password routes. */
+Route::group(['prefix' => RouteHelper::getPasswordPrefix()], function () {
+    Route::post('/', 'PasswordController@updatePassword')->name('password.update');
+    Route::get('forgot', '\App\Http\Controllers\Auth\ForgotPasswordController@showLinkRequestForm')->name('password.forgot');
+    Route::post('forgot', '\App\Http\Controllers\Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.forgot.store');
+    Route::get('reset/{token}', '\App\Http\Controllers\Auth\ResetPasswordController@showResetForm')->name('password.reset');
+    Route::post('reset', '\App\Http\Controllers\Auth\ResetPasswordController@reset')->name('password.reset.store');
+});
+
+Route::get('/auth/login', '\App\Http\Controllers\Auth\LoginController@showLoginForm')->name('auth.login');
+Route::post('/auth/login', '\App\Http\Controllers\Auth\LoginController@login')->name('auth.login.store');
+Route::get('/auth/logout', '\App\Http\Controllers\Auth\LoginController@logout')->name('auth.logout');
 
 Route::get('/trycs/', '\App\Http\Controllers\Single\TryCsController@index')->name('trycs.index');
 Route::get('/trycs/index', '\App\Http\Controllers\Single\TryCsController@index')->name('trycs.index');

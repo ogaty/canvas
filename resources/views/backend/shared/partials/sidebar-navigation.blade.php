@@ -11,7 +11,7 @@
         </a>
         <ul class="main-menu profile-ul">
             <li @if (Route::is('canvas.admin.profile.index')) class="active" @endif><a href="{!! route('canvas.admin.profile.index') !!}"><i class="zmdi zmdi-account"></i> Your Profile</a></li>
-            <li><a href="{!! route('logout') !!}" name="logout"><i class="zmdi zmdi-power"></i> Sign out</a></li>
+            <li><a href="/auth/logout" name="logout"><i class="zmdi zmdi-power"></i> Sign out</a></li>
         </ul>
     </div>
     <ul class="main-menu main-ul">

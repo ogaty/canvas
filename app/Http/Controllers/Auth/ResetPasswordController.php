@@ -33,7 +33,7 @@ class ResetPasswordController extends Controller
      */
     public function showResetForm(Request $request, $token = null)
     {
-        return view('canvas::auth.passwords.reset')->with(
+        return view('auth.passwords.reset')->with(
             ['token' => $token, 'email' => $request->email]
         );
     }
@@ -41,7 +41,7 @@ class ResetPasswordController extends Controller
     /**
      * @var string
      */
-    protected $redirectTo = '/admin';
+    protected $redirectTo = '/adm';
 
     /**
      * Create a new controller instance.
