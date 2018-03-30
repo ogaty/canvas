@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.3/themes/prism.min.css" />
+    <link href="style.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.3/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.2/vue.min.js"></script>
+    <title>Try Visual Studio.</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <h1>Try Visual Studio.</h1>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>WebViewを扱う</h1>
+
+                <h2>uwpの場合</h2>
+                <p>
+                    uwpの場合はxamlにWebViewと書くだけ。
+                    <br> 後はNameを設定して、コードビハインド側の初期化時にName.Navigateでurlを指定させれば良いです。
+                    <br>
+                </p>
+                <p>
+                    ローカルのhtmlを呼ぶ場合はms-appx:///local/という感じで指定します。
+                    <br> この際、LocalState直下にあってはいけません。
+                    <br> LocalState/html/xxx.htmlのように一個フォルダを挟むこと。
+                </p>
+                <h2>macの場合</h2>
+                <p>
+                    macの場合はstoryboardでWebViewを作り、outlet変数を設定。
+                    <br> 後は
+                    <pre><code class="language-csharp">let req = NSURLRequest(new NSURL(""))
+                            webview.loadRequest(req)</code></pre> こんな感じ？
+                    <br> ローカルのhtmlを呼ぶ場合は
+                    <br> web.LoadHtmlString(html, new NSUrl(new NSString(bundle), true));という形でhtmlそのものを指定します。
+                    <br> パスを設定しないとimgやcssが読めないので気をつけて。
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.3/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.2/vue.min.js"></script>
+    <title>storyBoardを使う</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <h1>Try Visual Studio and c#.</h1>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <h1>storyBoardを使う</h1>
+        <div class="row">
+            <div class="col-md-12">
+
+                StoryBoardはMacのレイアウトを扱うファイルです。
+                <br> Main.storyBoardっていうファイルを開くと自動的にXcodeが開き、StoryBoardが展開されます。
+                <br> こちらでデザインを全般的に管理するのですね。
+                <br>
+                <br> Formアプリケーションのような感じで右下からパーツをドラッグして持ってきて組み合わせるような感じです。
+                <br>
+                <h2>用語</h2>
+                基本的にWindow、ViewController、Viewという３種があります。
+                <br> Viewとは一番小さな単位。ボタンとかラベルとかですね。
+                <br> Tableなんかは中にText Cell Viewというものが内包されているのでややこしいです。
+                <br> また、基本的にViewからView Controllerへのアクセスはできないものと思ったほうがいいです。
+                <br> んでそのViewをまとめたものがView Controller。
+                <br> それらを集めたものがWindowです。
+                <h2>ViewControllerを割り当てる</h2>
+                右上のタブからclassの欄を探してそこにViewControllerのクラス名を記述しましょう。
+                <h2>outletを接続する</h2>
+                xamlで言うとName=""を設定する手順。
+                <br> これちょっとめんどい。
+                <ul>
+                    <li>
+                        右上の○が２つつらなっているアイコンをクリック
+                    </li>
+                    <li>
+                        ファイルを〜.mから〜.hに切り替える
+                    </li>
+                    <li>
+                        controlを押しながらオブジェクトをドラッグ(cmdじゃないよ)
+                    </li>
+                    <li>
+                        outletの名前をつける
+                    </li>
+                </ul>
+                こんな感じですね。
+                <h2>actionを設定する</h2>
+                OnXxxClickedみたいな感じの関数を用意する手順。
+                <br> これは上記outletを設定する時にセレクトボックスからActionにすれば良いです。
+                <br> ViewController側の補完に載っかってきます。
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

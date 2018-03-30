@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.3/themes/prism.min.css" />
+        <link href="style.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.3/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.2/vue.min.js"></script>
+        <title>Try Visual Studio.</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <h1>Try Visual Studio.</h1>
+                </div>
+            </div>
+        </nav>
+            
+        
+        <div class="container">
+            <h1>Fontを埋め込む</h1>
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>uwpの場合</h2>
+                    まずはAssetsなり適当なフォルダにttfファイルを入れます。<br>
+                    ビルドアクションはコンテンツにしておきましょう。<br>
+                    んで、後はFontFamilyを指定するだけですね。<br>
+                    この際、フォントファイル名#フォント名という形になります。<br>
+                    <pre><code class="language-csharp">txt.FontFamily = new FontFamily("ms-appx:///Assets/font.ttf#Font");</code></pre>
+                    こんな感じ。
+                    <h2>Macの場合(SkiaSharp)</h2>
+                    SkiaSharpの場合ですが、こっちはassemblyを取得する必要があります。<br>
+                    <pre><code class="language-csharp">System.Reflection.Assembly asm = System.Reflection.Assembly.GetExecutingAssembly();
+                        SKManagedStream stream = new SKManagedStream(asm.GetManifestResourceStream("path/to/font.ttf"));
+                        paint.Typeface = SKTypeface.FromStream(stream);
+                    </code></pre>
+                    こんな感じ。
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

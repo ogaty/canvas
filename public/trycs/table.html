@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.3/themes/prism.min.css" />
+    <link href="style.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.3/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.2/vue.min.js"></script>
+    <title>Try Visual Studio.</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <h1>Try Visual Studio.</h1>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+
+                <h1>Tableを扱う</h1>
+                <h2>windows(uwp)の場合</h2>
+                困ったことにTableはuwpには存在しません。
+                <br> うまくGridViewを使って実現させるかTemplateを指定したListViewで実装しましょう。
+                <h2>Mac(storyBoard)の場合</h2>
+                こちらは３つのクラスを用意します。
+                <br> 実際にデータが入っているクラスとNSTableViewDelegateを継承したクラス、NSTableViewDataSourceを継承したクラスですね。
+                <br> んで、outletしたtable変数のDelegateにDelegate継承クラスを設定。
+                <br> Delegate継承クラスはDataSource継承クラスをコンストラクタの引数にしてメンバへ放り込んでおきましょう。
+                <br> DataSourceはlistとかそんな名前のListクラスを作ってデータを入れておくのがいいかと。
+                <p>
+                    で、あとは必要な関数をoverrideしていきます。Delegate側は
+                </p>
+                <pre><code class="language-csharp">public override NSView GetViewForItem(NSTableView tableView, NSTableColumn tableColumn, nint row)</code></pre>
+                <p>
+                    DataSource側は
+                </p>
+                <pre><code class="language-csharp">public override nint GetRowCount(NSTableView tableView)</code></pre>
+                <p>
+                    をoverrideしましょう。若干swiftよりも簡単かな？
+                </p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

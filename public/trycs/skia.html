@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.3/themes/prism.min.css" />
+    <link href="style.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.3/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.2/vue.min.js"></script>
+    <title>skiasharpを使う</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <h1>Try Visual Studio and c#.</h1>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                    <h1>Xamarin.Macでskiasharpを使う</h1>
+
+                <h2>nugetからインストール</h2>
+                まずはnugetからSkiaSharp.viewをインストールしましょ。
+                <h2>custom viewを定義</h2>
+                StoryBoardを開き、custom viewを作ってoutletをつないでおきます。
+                <h2>SKCanvasの作成</h2>
+                次は普通にインスタンスを作っていきます。
+                <br> デリゲートを作るのがポイント。
+                <br>
+                <pre><code class="language-csharp">SKCanvasView sk = new SKCanvasView(new CGRect(0, 0, 200, 200));
+sk.PaintSurface += CanvasPaint;</code></pre>
+                <h2>デリゲートの定義</h2>
+                続いてデリゲート関数を作っていきましょう。
+                <br>
+                <pre><code class="language-csharp">public void CanvasPaint() 
+{
+    var surface = e.Surface;
+    var surfaceWidth = e.Info.Width;
+    var surfaceHeight = e.Info.Height;
+    SKCanvas cvs = e.Surface.Canvas;
+    cvs.Clear();
+    SKRect bg = new SKRect(0, 0, 200, 200);
+    SKPaint bgStyle = new SKPaint();
+    bgStyle.Color = new SKColor(255, 255, 255, 255);
+    cvs.DrawRect(bg, bgStyle);
+    SKPaint lineStyle = new SKPaint();
+    lineStyle.Style = SKPaintStyle.Stroke;
+    SKPaint p = new SKPaint();
+    p.Style = SKPaintStyle.Fill;
+    cvs.DrawCircle(50, 50, 50, lineStyle);
+}</code></pre>
+                <br> こんな感じね。
+                <h2>subviewの追加</h2>
+                最後に先程のcustom viewに対してsubviewを追加すればOK。
+                <br>
+                <pre><code class="language-csharp">horoscopeCanvas.AddSubview(sk);</code></pre>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

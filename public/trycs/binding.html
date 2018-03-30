@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.3/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.2/vue.min.js"></script>
+    <title>Try Visual Studio.</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <h1>Try Visual Studio.</h1>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>ViewModel Binding</h1>
+                <h2>ViewModelのクラスを作る</h2>
+                まずはSampleViewModelとか作りましょ。
+                <br> インターフェースにINotifyPropertyChangedってのを入れること。
+                <br>
+                <br> んでインターフェース関数を定義。
+                <br>
+                <pre><code class="language-csharp">public event PropertyChangedEventHandler PropertyChanged;
+                                protected void OnPropertyChanged(string propertyname)
+                                {
+                                    PropertyChangedEventHandler handler = PropertyChanged;
+                                    if (handler != null)
+                                    {
+                                        PropertyChanged(this, new PropertyChangedEventArgs(propertyname));
+                                    }
+                                }
+                            </code></pre> 何も変える必要無し。
+                <br> 後は変数を２つprivateとpublicで定義します。
+                <br>
+                <pre><code class="language-csharp">private string _name;
+                                public string name 
+                                {
+                                    get 
+                                    {
+                                        return _name;
+                                    }
+                                    set
+                                    {
+                                        _name = value;
+                                        OnPropertyChanged("name");
+                                    }
+                                }</code></pre> んで今度はPage側。xaml.csってやつ。
+                <br> ここでthis.DataContenxt = SampleViewModel;
+                <br> と宣言。
+                <br> View側は&lt;TextBlock Text="{Binding name}"&gt;&lt;/TextBlock&gt;
+                <br> としておけば完了です。
+                <br>
+                <h2>ListやDataGridのBinding</h2>
+                こういう系はItemsSourceを定義しておくこと。
+                <br> &lt;ListView ItemsSource="{Binding table}"&gt;ですね。
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

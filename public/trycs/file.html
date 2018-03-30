@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.3/themes/prism.min.css" />
+        <link href="style.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.3/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.2/vue.min.js"></script>
+        <title>Try Visual Studio.</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <h1>Try Visual Studio.</h1>
+                </div>
+            </div>
+        </nav>
+            
+        
+        <div class="container">
+            <h1>ファイル操作</h1>
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Fileクラス</h2>
+                    基本的にOpenで読み込み、Closeで閉じます。<br>
+                    fopen、fcloseと変わらない感じ。<br>
+                    FileModeオプションは下記のような感じですね。<br>
+                    Open: 普通に開く、ファイルがないとエラー<br>
+                    OpenOrCreate: ファイルが無いと生成して開く<br>
+                    Create: 生成する、ファイルがあると上書き<br>
+                    CreateNew: 生成する、ファイルがあるとエラー<br>
+                    Append: 追記、ファイルが無いとエラー<br>
+                    Truncate: ファイルを空にする、ファイルがないとエラー<br>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>wpfの場合</h2>
+                    パス制約がないのでStreamReaderでさくっといけます。<br>
+                    <pre><code class="language-csharp">string html = "";
+                            using (StreamReader reader = new StreamReader(path)) {
+                                html = reader.ReadToEnd();
+                            }
+                    </code></pre>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>uwpの場合</h2>
+                    async/awaitを使うことが必須です。<br>
+                    <pre><code class="language-csharp">var data = await systemFolder.GetFileAsync("file.txt");</code></pre>
+                    こんな感じ。受け取る型もStorageFile型なので読み込みもめんどい。
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Macの場合</h2>
+                    こちらはuwpみたいにしなくてもStreamReaderでOK。<br>
+                    ただしストア用アプリにするなら変なパスを指定しないように。<br>
+                    <pre><code class="language-csharp">string html = "";
+                            using (StreamReader reader = new StreamReader(path)) {
+                                html = reader.ReadToEnd();
+                            }</code></pre>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

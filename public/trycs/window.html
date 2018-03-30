@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.3/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.2/vue.min.js"></script>
+    <title>Try Visual Studio.</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <h1>Try Visual Studio.</h1>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>windowを閉じる</h1>
+                <h2>windowsの場合</h2>
+                これ、下手にthis.close()とかやると良くないんですよね。
+                <br> インスタンスが残ってたりして再作成時予期せぬ動作を引き起こします。
+                <br> Visibility = hiddenで対応したほうがいいです。
+                <br> 呼び出し元のデータや関数にアクセスするには
+                <br> wpfの場合はnewした後にメンバに親ウィンドウのインスタンスを渡しましょう。
+                <br> uwpの場合はNavigate/OnNavigatedToで。
+                <h2>macの場合</h2>
+                最初self.disposeとかやったけどうまくいかなくてあれー？ってやってた。
+                <br> こっちはDismissViewController(this)という形でクローズできます。
+                <br> 呼び出し元のデータや関数にアクセスするには
+                <br> XxxViewController xxx = this.PresentingViewController as XxxViewController;
+                <br>
+                <br> って形で。
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
