@@ -5,6 +5,7 @@
                 <li class="header-navigation--menu_item">
                     <a href="/">Home</a>
                     <a href="/techs">Techs</a>
+                    <a href="/trycs">VisualStudio</a>
                 </li>
             </ul>
         </nav>
