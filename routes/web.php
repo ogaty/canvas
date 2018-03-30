@@ -204,12 +204,14 @@ Route::group([
         });
 });
 
-            /* Reset password routes. */
-            Route::group(['prefix' => RouteHelper::getPasswordPrefix()], function () {
-                Route::post('/', '\App\Http\Controllers\Auth\PasswordController@updatePassword')->name('canvas.auth.password.update');
-                Route::get('forgot', '\App\Http\Controllers\Auth\ForgotPasswordController@showLinkRequestForm')->name('canvas.auth.password.forgot');
-                Route::post('forgot', '\App\Http\Controllers\Auth\ForgotPasswordController@sendResetLinkEmail')->name('canvas.auth.password.forgot.store');
-                Route::get('reset/{token}', '\App\Http\Controllers\Auth\ResetPasswordController@showResetForm')->name('canvas.auth.password.reset');
-                Route::post('reset', '\App\Http\Controllers\Auth\ResetPasswordController@reset')->name('canvas.auth.password.reset.store');
-            });
+/* Reset password routes. */
+Route::group(['prefix' => RouteHelper::getPasswordPrefix()], function () {
+    Route::post('/', '\App\Http\Controllers\Auth\PasswordController@updatePassword')->name('canvas.auth.password.update');
+    Route::get('forgot', '\App\Http\Controllers\Auth\ForgotPasswordController@showLinkRequestForm')->name('canvas.auth.password.forgot');
+    Route::post('forgot', '\App\Http\Controllers\Auth\ForgotPasswordController@sendResetLinkEmail')->name('canvas.auth.password.forgot.store');
+    Route::get('reset/{token}', '\App\Http\Controllers\Auth\ResetPasswordController@showResetForm')->name('canvas.auth.password.reset');
+    Route::post('reset', '\App\Http\Controllers\Auth\ResetPasswordController@reset')->name('canvas.auth.password.reset.store');
+});
 
+Route::get('/trycs/', '\App\Http\Controllers\Single\TryCsController@index')->name('trycs.index');
+Route::get('/trycs/index', '\App\Http\Controllers\Single\TryCsController@index')->name('trycs.index');

@@ -53,7 +53,7 @@ class BlogXmlData
         $tags = Tag::all();
 
         return [
-            'url' => 'http://blog.ogatism.com',
+            'url' => env('APP_URL', 'http://blog.ogatism.com'),
             'posts' => $posts,
             'tags' => $tags,
         ];

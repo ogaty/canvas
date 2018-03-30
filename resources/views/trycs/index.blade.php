@@ -1,43 +1,31 @@
-<!DOCTYPE html>
-<html lang="ja">
-    <head>
-        <meta charset="UTF-8">
-        <meta viewport="width=device-width">
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <link href="style.css" rel="stylesheet">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.3/prism.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.2/vue.min.js"></script>
-        <title>Try Visual Studio and C#.</title>
-    </head>
-    <body>
-        <nav class="navbar navbar-default">
-            <div class="container">
-                <div class="navbar-header">
-                    <h1>Try Visual Studio.</h1>
-                </div>
-            </div>
-        </nav>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 col-sm-12">
-                <ul>
-                    <li>
-                        <a href="/trycs/first.html">はじめに</a>
-                    </li>
-                    <li>
-                        <a href="/trycs/uwp-wpf.html">uwpとwpfの違い</a>
-                    </li>
-                    <li>
-                        <a href="/trycs/version.html">Visual Studio WindowsとMacの違い</a>
-                    </li>
-                    <li>
-                        <a href="/trycs/tags.html">(win)xamlのタグあれこれ</a>
-                    </li>
-                    <li>
-                        <a href="/trycs/binding.html">(win)ViewModel Binding</a>
-                    </li>
+@extends('trycs.layout')
+
+@section('title')
+Try Visual Studio.
+@stop
+
+@section('content')
+@include('trycs.header')
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-sm-12">
+            <ul>
+                <li>
+                    <a href="/trycs/first.html">はじめに</a>
+                </li>
+                <li>
+                    <a href="/trycs/uwp-wpf.html">uwpとwpfの違い</a>
+                </li>
+                <li>
+                    <a href="/trycs/version.html">Visual Studio WindowsとMacの違い</a>
+                </li>
+                <li>
+                    <a href="/trycs/tags.html">(win)xamlのタグあれこれ</a>
+                </li>
+                <li>
+                    <a href="/trycs/binding.html">(win)ViewModel Binding</a>
+                </li>
                     <li>
                         <a href="/trycs/storyboard.html">(mac)storyboardを使う</a>
                     </li>
@@ -81,9 +69,9 @@
                             <a href="/trycs/serialize.html">(win/mac)xmlパース(シリアライズ)</a>
                         </li>
                     </ul>
-                </div>
-                <div class="col-md-4 col-sm-12">
-                    <ul>
+        </div>
+        <div class="col-md-4 col-sm-12">
+            <ul>
                         <li>
                             <a href="/trycs/segue.html">(mac)新しいウィンドウを開く</a>
                         </li>
@@ -93,9 +81,9 @@
                         <li>
                             <a href="/trycs/messagebox.html">(win/mac)アラートダイアログを出す</a>
                         </li>
-                    </ul>
-                </div>
-            </div>
+            </ul>
         </div>
-    </body>
-</html>
+    </div>
+</div>
+@stop
+

@@ -16,4 +16,8 @@
         <lastmod>{{ \Carbon\Carbon::parse($value['updated_at'])->toAtomString() }}</lastmod>
     </url>
     @endforeach
+    <url>
+        <loc>{{ env('APP_URL', 'http://blog.ogatism.com') }}/trycs/index</loc>
+        <lastmod>2018-03-30T14:00:00+09:00</lastmod>
+    </url>
 </urlset>
