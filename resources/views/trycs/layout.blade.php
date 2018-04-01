@@ -25,5 +25,10 @@
 </head>
 <body>
 @yield('content')
+
+@if (!empty(\App\Models\Settings::gaId()))
+    @include('frontend.blog.partials.analytics')
+@endif
+
 </body>
 </html>

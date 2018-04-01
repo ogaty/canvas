@@ -12,7 +12,7 @@ Try Visual Studio.
         <div class="col-md-4 col-sm-12">
             <ul>
                 <li>
-                    <a href="/trycs/first.html">はじめに</a>
+                    <a href="/trycs/first">はじめに</a>
                 </li>
                 <li>
                     <a href="/trycs/uwp-wpf.html">uwpとwpfの違い</a>
@@ -26,33 +26,34 @@ Try Visual Studio.
                 <li>
                     <a href="/trycs/binding.html">(win)ViewModel Binding</a>
                 </li>
-                    <li>
-                        <a href="/trycs/storyboard.html">(mac)storyboardを使う</a>
-                    </li>
-                    <li>
-                        <a href="/trycs/textview.html">(mac)NSTextViewを扱う</a>
-                    </li>
-                    <li>
-                        <a href="/trycs/radio.html">(win/mac)Radioボタンを扱う</a>
-                    </li>
-                    <li>
-                        <a href="/trycs/table.html">(win/mac)Tableを扱う</a>
-                    </li>
-                    <li>
-                        <a href="/trycs/outline.html">(mac)OutlineViewを扱う</a>
-                    </li>
-                    <li>
-                        <a href="/trycs/webview.html">(win/mac)WebViewを扱う</a>
-                    </li>
-                    <li>
-                        <a href="/trycs/font.html">(win/mac)フォントを埋め込む</a>
-                    </li>
-                    <li>
-                        <a href="/trycs/skia.html">(mac)skiaSharpを使う</a>
-                    </li>
-                </div>
-                <div class="col-md-4 col-sm-12">
-                    <ul>
+                <li>
+                    <a href="/trycs/storyboard.html">(mac)storyboardを使う</a>
+                </li>
+                <li>
+                    <a href="/trycs/textview.html">(mac)NSTextViewを扱う</a>
+                </li>
+                <li>
+                    <a href="/trycs/radio.html">(win/mac)Radioボタンを扱う</a>
+                </li>
+                <li>
+                    <a href="/trycs/table.html">(win/mac)Tableを扱う</a>
+                </li>
+                <li>
+                    <a href="/trycs/outline.html">(mac)OutlineViewを扱う</a>
+                </li>
+                <li>
+                    <a href="/trycs/webview.html">(win/mac)WebViewを扱う</a>
+                </li>
+                <li>
+                    <a href="/trycs/font.html">(win/mac)フォントを埋め込む</a>
+                </li>
+                <li>
+                    <a href="/trycs/skia.html">(mac)skiaSharpを使う</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-4 col-sm-12">
+            <ul>
                         <li>
                             <a href="/trycs/array.html">C#のarray</a>
                         </li>

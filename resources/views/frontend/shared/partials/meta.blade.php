@@ -26,3 +26,5 @@
 <meta name="twitter:title" content="@yield('twitter-title')">
 <meta name="twitter:description" content="@yield('twitter-description')">
 <meta name="twitter:image" content="@yield('twitter-image')">
+
+@yield('structure')

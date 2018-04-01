@@ -191,5 +191,8 @@ Route::get('/auth/login', '\App\Http\Controllers\Auth\LoginController@showLoginF
 Route::post('/auth/login', '\App\Http\Controllers\Auth\LoginController@login')->name('auth.login.store');
 Route::get('/auth/logout', '\App\Http\Controllers\Auth\LoginController@logout')->name('auth.logout');
 
-Route::get('/trycs/', '\App\Http\Controllers\Single\TryCsController@index')->name('trycs.index');
+Route::get('/trycs/', '\App\Http\Controllers\Single\TryCsController@index')->name('trycs.top');
 Route::get('/trycs/index', '\App\Http\Controllers\Single\TryCsController@index')->name('trycs.index');
+Route::get('/trycs/first', function() {
+    return view('trycs.first');
+});

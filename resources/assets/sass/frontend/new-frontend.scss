@@ -45,21 +45,21 @@ button, input[type=button], input[type=submit] {
 #header-top--search {
     float: left;
     margin-bottom: 0;
-}
-#header-top--search #submit-button {
-    float: left;
-    border: 0;
-    background: transparent;
-    width: 26px;
-    height: 21px;
-    margin-right: 4px;
-}
-#header-top--search .fa {
-    float: left;
-    color: #757575;
-    font-size: 14px;
-    line-height: 13px;
-    margin-top: 3px;
+    #submit-button {
+        float: left;
+        border: 0;
+        background: transparent;
+        width: 26px;
+        height: 21px;
+        margin-right: 4px;
+    }
+    .fa {
+        float: left;
+        color: #757575;
+        font-size: 14px;
+        line-height: 13px;
+        margin-top: 3px;
+    }
 }
 #header-top--search input[type=text] {
     width: 160px;
@@ -74,6 +74,7 @@ button, input[type=button], input[type=submit] {
 .header-top--social {
     float: right;
     margin-top: 1px;
+    list-style-type: none;
 }
 .header-top--social li {
     margin-right: 30px;
@@ -272,6 +273,10 @@ button, input[type=button], input[type=submit] {
 }
 .tag-link, .tag-subtitle {
     text-align: center;
+}
+.footer-wrap {
+    text-align: center;
+    padding: 12px;
 }
 @media (min-width: 992px) {
     .container {

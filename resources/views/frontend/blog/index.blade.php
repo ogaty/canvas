@@ -14,7 +14,7 @@
     <div class="site-body">    
     <div class="container">
         <div class="">
-            <div class="">
+            <div class="posts">
                 @include('frontend.blog.partials.tag')
                 @include('frontend.blog.partials.posts')
                 @include('frontend.blog.partials.paginate-index')

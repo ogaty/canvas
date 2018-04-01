@@ -13,8 +13,12 @@
 @section('content')
     <article>
         <div class="post-detail">
-        <div class="container" id="post">
+            <div class="container" id="post">
             <div class="">
+                @if(Auth::check())
+                    <p><a href="{{ route('canvas.admin.post.edit', $post->id) }}">edit</a></p>
+                @endif
+
                 <div class="">
                     @if ($post->page_image)
                         <div class="text-center">
@@ -40,7 +44,7 @@
 
                 </div>
             </div>
-        </div>
+            </div>
         </div>
     </article>
 
@@ -50,3 +54,32 @@
 @section('unique-js')
     <script src="/js/new-frontend.js" charset="utf-8"></script>
 @endsection
+
+@section('structure')
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://blog.ogatism.com"
+  },
+  "headline": "{{ $post->title }}",
+  "datePublished": {{ \Carbon\Carbon::parse($post->created_at)->toAtomString() }},
+  "dateModified": {{ \Carbon\Carbon::parse($post->updated_at)->toAtomString() }},
+  "author": {
+    "@type": "Person",
+    "name": "ogaty"
+  },
+   "publisher": {
+    "@type": "Organization",
+    "name": "ogatism",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://ogatism.jp/wp/wp-content/uploads/2015/08/ogatismlogoB1.png"
+    }
+  },
+  "description": "{{ $post->subtitle }}"
+}
+</script>
+@stop
