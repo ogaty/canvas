@@ -50,7 +50,6 @@ class BlogSearchData
     protected function blogSearchData($search)
     {
         $posts = Post::where('published_at', '<=', Carbon::now())
-            ->where('custom_code', 'blog')
             ->where('is_published', 1)
             ->where('title', 'like', '%'.$search.'%')
             ->orderBy('published_at', 'desc')
