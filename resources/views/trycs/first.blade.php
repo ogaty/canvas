@@ -3,9 +3,9 @@
 
 @section('content')
 <div class="container">
-    <h1>はじめに</h1>
     <div class="row">
        <div class="col-md-12">
+           <h1>はじめに</h1>
            <p>
                昨今MacでもVisual Studioが使えるようになってきました。<br>
                もはや世の中はvisual studioでほぼほぼ完結してしまいます。<br>

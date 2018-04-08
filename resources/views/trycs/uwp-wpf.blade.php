@@ -1,31 +1,11 @@
-<!DOCTYPE html>
-<html lang="ja">
+@extends('trycs.layout')
+@include('trycs.content-top')
 
-<head>
-    <meta charset="UTF-8">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
-    <link href="style.css" rel="stylesheet">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.3/prism.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.2/vue.min.js"></script>
-    <title>Try Visual Studio.</title>
-</head>
-
-<body>
-    <nav class="navbar navbar-default">
-        <div class="container">
-            <div class="navbar-header">
-                <h1>Try Visual Studio.</h1>
-            </div>
-        </div>
-    </nav>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-
+@section('content')
+<div class="container">
+    <h1>はじめに</h1>
+    <div class="row">
+       <div class="col-md-12">
                 <h1>uwpとかwpfとか</h1>
                 <p>
                     windowsの開発は大きく分けると３パターンあります。
@@ -36,7 +16,8 @@
                     <br> けっこう単純です。
                 </p>
                 <p>
-                    wpf(Windows Presentation Foundation)ってのはxamlを使って開発するwindowsの開発方式。
+                    wpf(Windows Presentation Foundation)ってのはxamlを使って開発するwindowsの
+開発方式。
                     <br> ViewModelっていう機構があるためFormよりも煩雑にならず比較的使いやすい形式ですね。
                 </p>
                 <p>
@@ -50,10 +31,9 @@
                     <br> ま、基本はどっちも同じです。
                     <br> ただ今から従来のwindows formやるのはあまりおすすめしないかなあ。
                 </p>
-            </div>
+           @include('trycs.content-bottom')
         </div>
     </div>
+</div>
+@stop
 
-</body>
-
-</html>

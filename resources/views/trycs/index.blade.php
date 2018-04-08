@@ -15,10 +15,10 @@ Try Visual Studio.
                     <a href="/trycs/first">はじめに</a>
                 </li>
                 <li>
-                    <a href="/trycs/uwp-wpf.html">uwpとwpfの違い</a>
+                    <a href="/trycs/uwp-wpf">uwpとwpfの違い</a>
                 </li>
                 <li>
-                    <a href="/trycs/version.html">Visual Studio WindowsとMacの違い</a>
+                    <a href="/trycs/version">Visual Studio WindowsとMacの違い</a>
                 </li>
                 <li>
                     <a href="/trycs/tags.html">(win)xamlのタグあれこれ</a>

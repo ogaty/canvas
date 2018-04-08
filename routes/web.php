@@ -193,6 +193,6 @@ Route::get('/auth/logout', '\App\Http\Controllers\Auth\LoginController@logout')-
 
 Route::get('/trycs/', '\App\Http\Controllers\Single\TryCsController@index')->name('trycs.top');
 Route::get('/trycs/index', '\App\Http\Controllers\Single\TryCsController@index')->name('trycs.index');
-Route::get('/trycs/first', function() {
-    return view('trycs.first');
+Route::get('/trycs/{id}', function($id) {
+    return view('trycs.' . $id);
 });
